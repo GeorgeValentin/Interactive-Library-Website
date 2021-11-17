@@ -1,0 +1,18 @@
+/* Large Screens */
+@media (max-width: 1350px) {
+  .intro-section {
+    grid-template-columns: 2fr;
+    width: 100%;
+  }
+
+  .intro-cover {
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  .intro-content {
+    grid-row-start: 2;
+    width: 75%;
+    margin: 0 auto;
+  }
+}
