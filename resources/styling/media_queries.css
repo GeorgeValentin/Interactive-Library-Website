@@ -1,4 +1,5 @@
-/* Tablet Screens */
+/** Intro Section **/
+/* Large Screens */
 @media (max-width: 1250px) {
   .intro-section {
     grid-template-columns: 1fr;
@@ -19,8 +20,13 @@
   }
 }
 
+/* Tablet Screens */
+@media (max-width: 768px) {
+}
+
 /* Mobile Phone Screens */
 @media (max-width: 550px) {
+  /* Intro Section */
   .intro-cover {
     width: 80%;
     background-size: 30rem 20rem;
@@ -33,5 +39,68 @@
 
   div .intro-title {
     font-size: var(--font-large);
+  }
+}
+
+/** Stats Section **/
+/* Large Screens */
+@media (max-width: 1460px) {
+  .stats-item {
+    flex: 0 0 33.33%;
+    padding: 1.25rem 0;
+  }
+
+  .stats-section-cover-img {
+    height: 10rem;
+  }
+}
+
+/* Tablet Screens */
+@media (max-width: 775px) {
+  .stats-section-title {
+    font-size: 2.5rem;
+  }
+
+  .stats-group {
+    justify-items: center;
+  }
+
+  .stats-item {
+    flex: 0 0 50%;
+  }
+
+  .stats-icon {
+    margin: 0 auto;
+  }
+
+  .stats-section-cover-img {
+    height: 8rem;
+  }
+}
+
+/* Mobile Phone Screens */
+@media (max-width: 575px) {
+  .stats-section {
+    padding-bottom: 2rem;
+  }
+
+  .stats-section-title {
+    font-size: 2rem;
+  }
+
+  .stats-group {
+    flex-direction: column;
+  }
+
+  .stats-item {
+    width: 100%;
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 465px) {
+  .stats-item {
+    width: 100%;
+    height: 10rem;
   }
 }
