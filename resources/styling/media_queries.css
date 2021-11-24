@@ -21,8 +21,6 @@
 }
 
 /* Tablet Screens */
-@media (max-width: 768px) {
-}
 
 /* Mobile Phone Screens */
 @media (max-width: 550px) {
@@ -71,6 +69,8 @@
 
   .stats-icon {
     margin: 0 auto;
+    width: 4rem;
+    height: 4rem;
   }
 
   .stats-section-cover-img {
@@ -95,6 +95,11 @@
   .stats-item {
     width: 100%;
     margin-bottom: 0.75rem;
+  }
+
+  .stats-icon {
+    width: 3.5rem;
+    height: 3.5rem;
   }
 }
 
