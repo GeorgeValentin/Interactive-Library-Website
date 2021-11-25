@@ -36,6 +36,45 @@ body {
   height: 100%;
   overflow-x: hidden;
 }
+/* Header Section */
+
+header{
+  background-image: linear-gradient();
+  height: 20vh;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.logo{
+  height:130px;
+  width: auto;
+  float:left;
+  filter:contrast();
+}
+
+.main-nav{
+float:right;
+list-style: none;
+margin-top: 45px;
+}
+
+.main-nav li{
+  display: inline-block;
+  margin-left:40px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 90%;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited{
+  padding: 8px 0;
+  color: #fff;
+}
+.main-nav li a:hover,
+.main-nav li a:active{
+  border-bottom: 2px solid black;
+}
+
 
 /* Intro Section */
 .intro-section {
