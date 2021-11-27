@@ -28,7 +28,8 @@
   box-sizing: border-box;
 }
 
-html,body {
+html,
+body {
   text-align: center;
   font-family: "Montserrat", sans-serif;
   margin: 0;
@@ -39,9 +40,9 @@ html,body {
 }
 /* Header Section */
 
-header{
+header {
   display: flex;
-  width:100%;
+  width: 100%;
   align-items: center;
   z-index: 2;
   background-color: darkslategrey;
@@ -49,21 +50,20 @@ header{
   background-size: cover;
   background-attachment: fixed;
 }
-.logo{
-  height:130px;
+.logo {
+  height: 130px;
   width: auto;
-  float:left;
-  filter:contrast();
+  float: left;
+  filter: contrast();
 }
 
-.main-nav{
-list-style: none;
-margin-top: 45px;
-flex:1;
+.main-nav {
+  list-style: none;
+  margin-top: 45px;
+  flex: 1;
 }
 
-.main-nav li{
-  
+.main-nav li {
   display: inline-block;
   padding-left: 40px;
   text-decoration: none;
@@ -72,12 +72,12 @@ flex:1;
 }
 
 .main-nav li a:link,
-.main-nav li a:visited{
+.main-nav li a:visited {
   padding: 8px 0;
   color: #fff;
 }
 .main-nav li a:hover,
-.main-nav li a:active{
+.main-nav li a:active {
   border-bottom: 2px solid black;
 }
 .search {
@@ -88,31 +88,30 @@ flex:1;
 
 .searchTerm {
   width: 100%;
-  border: 3px solid #00B4CC;
+  border: 3px solid #00b4cc;
   border-right: none;
   padding: 5px;
   height: 20px;
   border-radius: 5px 0 0 5px;
   outline: none;
-  color: #9DBFAF;
+  color: #9dbfaf;
 }
 
-.searchTerm:focus{
-  color: #00B4CC;
+.searchTerm:focus {
+  color: #00b4cc;
 }
 
 .searchButton {
   width: 40px;
   height: 36px;
-  border: 1px solid #00B4CC;
-  background: #00B4CC;
+  border: 1px solid #00b4cc;
+  background: #00b4cc;
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 20px;
 }
-
 
 /* Intro Section */
 .intro-section {
