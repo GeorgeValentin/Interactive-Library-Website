@@ -49,7 +49,7 @@
     </header>
     <hr>
 
-    <section class="intro-section">
+    <section id="intro-section">
         <div class="intro-content">
             <div class="intro-credits">
                 Lawr & George presents
@@ -142,7 +142,7 @@
 
     <hr>
 
-    <section class="audio-section">
+    <section id="audio-books-section" class="audio-section">
         <div class="audio-sample">
             George asculta manele
         </div>
@@ -152,7 +152,7 @@
     </section>
     <hr>
 
-    <section class="top_readings">
+    <section id="reading-trending" class="top_readings">
         <div class="book_group">
             <div class="book_image">
                 Book image
@@ -180,12 +180,12 @@
     </section>
     <hr>
 
-    <section class="movies-section">
+    <section id="movies" class="movies-section">
         Filme din carti
     </section>
     <hr>
 
-    <section class="submit-form">
+    <section id="contact-form-section" class="submit-form">
         <form class="form-elements" onsubmit="return false">
             <div>
                 <input type="text" class="input-book-title" name="bookTitle" placeholder="Book title">
@@ -217,7 +217,7 @@
     </section>
     <hr>
 
-    <section class="user-reviews">
+    <section id="reviews" class="user-reviews">
         <div class="review">
             <div class="image">
                 image
@@ -264,7 +264,7 @@
     </section>
     <hr>
 
-    <section class="mapping">
+    <section id="contact-and-map-section" class="mapping">
         <div class="RO-map">
             Harta romaniei
         </div>
@@ -273,24 +273,68 @@
 
 </body>
 
-<footer>
-    <div id="logo">
-        <p>Here stands the logo</p>
-    </div>
-    <div class="social-media">
-        <div class="logo-fb">
-            Link to facebook account
+<footer class="footer">
+    <div class="container">
+        <a class="footer-logo" href="#">CompanyLogo+Name</a>
+        <!-- <a class="footer-logo" href="#">
+            <img src="" alt="company-logo" />
+        </a> -->
+
+        <div class="footer-social">
+            <a class="social-icons" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+
+                    <!-- title -> invisible text because we need it to have something to be able to describe graphic 
+                    -> The title will be displayed on hover
+                    -->
+                    <title>Facebook</title>
+
+                    <!-- change the color -> fill to fit accordingly -->
+                    <path fill="#FFF"
+                        d="M18.896 0H1.104C.494 0 0 .494 0 1.104v17.793C0 19.506.494 20 1.104 20h9.58v-7.745H8.076V9.237h2.606V7.01c0-2.583 1.578-3.99 3.883-3.99 1.104 0 2.052.082 2.329.119v2.7h-1.598c-1.254 0-1.496.597-1.496 1.47v1.928h2.989l-.39 3.018h-2.6V20h5.098c.608 0 1.102-.494 1.102-1.104V1.104C20 .494 19.506 0 18.896 0z" />
+                </svg>
+            </a>
+
+            <a class="social-icons" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20">
+                    <title>Instagram</title>
+                    <path fill="#FFF"
+                        d="M10.333 1.802c2.67 0 2.987.01 4.042.059 2.71.123 3.976 1.409 4.1 4.099.048 1.054.057 1.37.057 4.04 0 2.672-.01 2.988-.058 4.042-.124 2.687-1.386 3.975-4.099 4.099-1.055.048-1.37.058-4.042.058-2.67 0-2.986-.01-4.04-.058-2.717-.124-3.976-1.416-4.1-4.1-.048-1.054-.058-1.37-.058-4.041 0-2.67.01-2.986.058-4.04.124-2.69 1.387-3.977 4.1-4.1 1.054-.048 1.37-.058 4.04-.058zm0-1.802C7.618 0 7.278.012 6.211.06 2.579.227.56 2.242.394 5.877.345 6.944.334 7.284.334 10s.011 3.057.06 4.123c.166 3.632 2.181 5.65 5.816 5.817 1.068.048 1.408.06 4.123.06 2.716 0 3.057-.012 4.124-.06 3.628-.167 5.651-2.182 5.816-5.817.049-1.066.06-1.407.06-4.123s-.011-3.056-.06-4.122C20.11 2.249 18.093.228 14.458.06 13.39.01 13.049 0 10.333 0zm0 4.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm0 8.468a3.333 3.333 0 110-6.666 3.333 3.333 0 010 6.666zm5.339-9.87a1.2 1.2 0 10-.001 2.4 1.2 1.2 0 000-2.4z" />
+                </svg>
+            </a>
+
+            <a class="social-icons" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 48 48">
+                    <title>Spotify</title>
+                    <path fill="#FFF" fill-rule="evenodd"
+                        d="M238.16 481.36c-7.68-4.56-20.52-5.04-27.84-2.76-1.2.36-2.4-.36-2.76-1.44-.36-1.2.36-2.4 1.44-2.76 8.52-2.52 22.56-2.04 31.44 3.24 1.08.6 1.44 2.04.84 3.12-.6.84-2.04 1.2-3.12.6m-.24 6.72c-.6.84-1.68 1.2-2.52.6-6.48-3.96-16.32-5.16-23.88-2.76-.96.24-2.04-.24-2.28-1.2-.24-.96.24-2.04 1.2-2.28 8.76-2.64 19.56-1.32 27 3.24.72.36 1.08 1.56.48 2.4m-2.88 6.6c-.48.72-1.32.96-2.04.48-5.64-3.48-12.72-4.2-21.12-2.28-.84.24-1.56-.36-1.8-1.08-.24-.84.36-1.56 1.08-1.8 9.12-2.04 17.04-1.2 23.28 2.64.84.36.96 1.32.6 2.04M224 460c-13.2 0-24 10.8-24 24s10.8 24 24 24 24-10.8 24-24-10.68-24-24-24"
+                        transform="translate(-200 -460)" />
+                </svg>
+            </a>
+
         </div>
-        <div class="logo-insta">
-            Link to Instagram account
+
+        <div class="footer-links col1">
+            <a href="#intro-section">About Us</a>
+            <a href="#contact-and-map-section">Contact</a>
+            <a href="#audio-books-section">Audio Books</a>
         </div>
-        <div class="logo-spotify">
-            Link to Spotify account
+
+        <div class="footer-links col2">
+            <a href="#movies">Book based movies</a>
+            <a href="#reading-trending">Trending</a>
+            <a href="#reviews">User Reviews</a>
+        </div>
+
+        <div class="request-book">
+            <a class="button-req-book" href="#contact-form-section">Request Book</a>
+        </div>
+
+        <div class="footer-copyright">
+            <cite>App Name</cite> &copy; by Lawrence & George. Designed with love in 2021.
         </div>
     </div>
-    <div class="terms-conditions">
-        <p><cite>App Name</cite> &copy; by Lawrence & George. Designed with love in 2021.</p>
-    </div>
+
 </footer>
 
 </html>

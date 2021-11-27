@@ -1,7 +1,7 @@
 /** Intro Section **/
 /* Large Screens */
 @media (max-width: 1250px) {
-  .intro-section {
+  #intro-section {
     grid-template-columns: 1fr;
     width: 100%;
     height: 95%;
@@ -107,5 +107,50 @@
   .stats-item {
     width: 100%;
     height: 10rem;
+  }
+}
+
+/* Footer Section */
+/* Large Screens Grid Layout */
+@media (min-width: 1200px) {
+  .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 3fr;
+
+    /* 2 rows of same height */
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+    /* these are the names of the columns of our 2 rows in the template */
+      "logo links1 links2 requestBook"
+      "social links1 links2 copyright";
+
+    gap: 1rem;
+
+    /* align the items along the row(inline) axis */
+    justify-items: start;
+  }
+}
+
+/* Medium and smaller screens */
+@media (max-width: 1200px) {
+  .footer-logo {
+    margin-bottom: 1.875rem;
+  }
+
+  .footer-social {
+    margin-bottom: 1.875rem;
+  }
+
+  .footer-links.col2 {
+    margin-bottom: 1.875rem;
+  }
+
+  .request-book {
+    text-align: center;
+  }
+
+  a.button-req-book {
+    margin-bottom: 1.875rem;
+    text-align: center;
   }
 }
