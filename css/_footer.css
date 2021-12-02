@@ -1,0 +1,172 @@
+/* Footer Section */
+.footer {
+  background-color: var(--darkBlue);
+  color: var(--white);
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer a {
+  color: var(--white);
+}
+
+.footer-logo {
+  font-weight: 700;
+  display: inline-block;
+  grid-area: logo;
+}
+
+.footer-social {
+  grid-area: social;
+
+  /* position the individual grid element footer-social at the end (vertically) */
+  align-self: end;
+}
+
+.footer-social a {
+  display: inline-block;
+  height: 1.25rem;
+}
+
+svg path {
+  transition: fill 150ms ease-in-out;
+}
+
+a:hover svg path {
+  fill: var(--limeGreen);
+}
+
+.footer-social a:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0.9375rem;
+}
+
+.footer-links.col1 {
+  grid-area: links1;
+}
+
+.footer-links.col2 {
+  grid-area: links2;
+}
+
+.footer-links a {
+  line-height: 2.25;
+  transition: color 150ms ease-in-out;
+}
+
+.footer-links a:hover {
+  color: var(--limeGreen);
+}
+
+.request-book {
+  grid-area: requestBook;
+  text-align: right;
+
+  /* -> align the grid item inside a cell along the inline (row) axis
+      -> this one applied to a grid item inside a single cell as oppose to justify-items, which applies to all grid items inside the container */
+  justify-self: end;
+}
+
+/* add styles to button */
+.button-req-book {
+  position: relative;
+  display: inline-block;
+  padding: 0.875rem 2.1875rem;
+
+  background-image: linear-gradient(
+    to right,
+    var(--limeGreen),
+    var(--brightCyan)
+  );
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: opacity 200ms ease-in-out;
+}
+
+.button-req-book::before {
+  content: "";
+  position: absolute;
+  border-radius: 50px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.25);
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+.button-req-book:hover::before {
+  opacity: 1;
+}
+
+.footer-copyright {
+  font-size: 0.8125rem;
+  color: var(--grayishBlue);
+  grid-area: copyright;
+  /* position the single element horizonatally */
+  justify-self: end;
+
+  /* position the single element vertically */
+  align-self: end;
+}
+
+/** Media Queries */
+/* Large Screens Grid Layout */
+@media (min-width: 1200px) {
+  .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 3fr;
+
+    /* 2 rows of same height */
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+      /* these are the names of the columns of our 2 rows in the template */
+      "logo links1 links2 requestBook"
+      "social links1 links2 copyright";
+
+    gap: 1rem;
+
+    /* align the items along the row(inline) axis */
+    justify-items: start;
+  }
+}
+
+/* Medium and smaller screens */
+@media (max-width: 1200px) {
+  .footer-logo {
+    margin-bottom: 1.875rem;
+  }
+
+  .footer-social {
+    margin-bottom: 1.875rem;
+  }
+
+  .footer-links.col2 {
+    margin-bottom: 1.875rem;
+  }
+
+  .request-book {
+    text-align: center;
+  }
+
+  a.button-req-book {
+    margin-bottom: 1.875rem;
+    text-align: center;
+  }
+}
