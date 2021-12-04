@@ -15,7 +15,6 @@
 }
 
 .footer-logo {
-  font-weight: 700;
   display: inline-block;
   grid-area: logo;
 }
@@ -124,6 +123,22 @@ a:hover svg path {
 
   /* position the single element vertically */
   align-self: end;
+}
+
+.website-footer-name {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.website-logo-name {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.website-footer-logo {
+  height: 2.5rem;
+  position: relative;
+  bottom: 0.25rem;
 }
 
 /** Media Queries */
