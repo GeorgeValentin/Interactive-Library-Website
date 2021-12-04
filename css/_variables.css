@@ -14,11 +14,9 @@
   /* 20px */
   --font-medium: 1.25rem;
 
+  /* 32px */
+  --font-medium-large: 2rem;
+
   /* 48px */
   --font-large: 3rem;
 }
-
-/* Tags */
-/* html {
-    height: 100%;
-  } */
