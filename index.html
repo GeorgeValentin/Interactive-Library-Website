@@ -21,6 +21,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
 
+    <!-- JavaScript -->
     <script src="./js/script.js"></script>
 
     <title>OurApp</title>
@@ -135,9 +136,7 @@
         </div>
     </section>
     <div class="stats-section-cover">
-        <div class="stats-section-cover-img">
-
-        </div>
+        <div class="stats-section-cover-img"></div>
     </div>
     <hr>
 
@@ -151,31 +150,56 @@
     </section>
     <hr>
 
-    <section id="reading-trending" class="top_readings">
-        <div class="book_group">
-            <div class="book_image">
-                Book image
+    <section id="reading-trending" class="trending-section">
+        <div class="trending-section-title">You should check these out</div>
+
+        <div class="trending-flex-container">
+            <div class="book-group">
+                <div class="book-rating">⭐⭐⭐⭐⭐</div>
+
+                <div id="first-book" class="book-image">
+                </div>
+
+                <div class="book-title">
+                    Beautiful World Where are you?
+                </div>
+
             </div>
-            <div class="book_title">
-                Book title
+
+            <div class="book-group">
+                <div class="book-rating">⭐⭐⭐⭐⭐</div>
+
+                <div id="second-book" class="book-image">
+                </div>
+
+                <div class="book-title">
+                    One Last Stop
+                </div>
+            </div>
+
+            <div class="book-group">
+                <div class="book-rating">⭐⭐⭐⭐⭐</div>
+
+                <div id="third-book" class="book-image">
+                </div>
+
+                <div class="book-title">
+                    The Love Songs of W.E.B. du Bois
+                </div>
+            </div>
+
+            <div class="book-group">
+                <div class="book-rating">⭐⭐⭐⭐⭐</div>
+
+                <div id="fourth-book" class="book-image">
+                </div>
+
+                <div class="book-title">
+                    The Love Songs of W.E.B. du Bois
+                </div>
             </div>
         </div>
-        <div class="book_group">
-            <div class="book_image">
-                Book image
-            </div>
-            <div class="book_title">
-                Book title
-            </div>
-        </div>
-        <div class="book-group">
-            <div class="book-image">
-                Book image
-            </div>
-            <div class="book-title">
-                Book title
-            </div>
-        </div>
+
     </section>
     <hr>
 
@@ -184,7 +208,7 @@
             This Year's Big Screen Counterparts
         </div>
 
-        <div id="movies-carousel" class="carousel slide" data-bs-ride="false" data-bs-interval="100000">
+        <div id="movies-carousel" class="carousel slide" data-bs-ride="false" data-bs-interval="5000">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#movies-carousel" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
@@ -255,6 +279,7 @@
     <hr>
 
     <section id="reviews" class="user-reviews">
+        <div class="title">What people are saying...</div>
         <div class="review">
             <div class="image">
                 image
@@ -368,7 +393,7 @@
         </div>
 
         <div class="footer-copyright">
-            <cite class="website-footer-name">ReaderX</cite> &copy; by Lawrence & George. Designed with love in 2021.
+            &copy; <cite class="website-footer-name">ReaderX</cite> by Lawrence & George. Designed with love in 2021.
         </div>
     </div>
 

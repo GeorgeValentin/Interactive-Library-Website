@@ -1,0 +1,49 @@
+.trending-section {
+  padding: 2rem 3rem 2rem;
+}
+
+.trending-section-title {
+  padding-bottom: 1.5rem;
+}
+
+.trending-flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.book-group {
+  width: 20rem;
+}
+
+.book-rating {
+}
+
+.book-image {
+  background-repeat: no-repeat;
+  height: 30rem;
+  background-position: center bottom;
+  background-size: cover;
+  width: 100%;
+  border-radius: 0.25rem;
+  margin: 0 auto;
+}
+
+.book-image#first-book {
+  background-image: url("../resources/images/beautiful_world_where_are_you_cover.jpg");
+}
+
+.book-image#second-book {
+  background-image: url("../resources/images/one_last_stop_cover.jpg");
+}
+
+.book-image#third-book {
+  background-image: url("../resources/images/the_love_songs_of_W.E.B._Du_Bois_Cover.jpg");
+}
+
+.book-image#fourth-book {
+  background-image: url("../resources/images/billy_summers_cover.jpg");
+}
+
+.book-title {
+}
