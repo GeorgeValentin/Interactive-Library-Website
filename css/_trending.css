@@ -1,22 +1,23 @@
 .trending-section {
   padding: 2rem 3rem 2rem;
+  background-color: hsla(0, 0%, 95%, 0.712);
 }
 
 .trending-section-title {
-  padding-bottom: 1.5rem;
+  padding-bottom: 3rem;
+  font-size: 2.5rem;
+  color: #3c40c6;
+  font-weight: 700;
 }
 
 .trending-flex-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .book-group {
   width: 20rem;
-}
-
-.book-rating {
 }
 
 .book-image {
@@ -45,5 +46,212 @@
   background-image: url("../resources/images/billy_summers_cover.jpg");
 }
 
+.book-info {
+  height: 9.375rem;
+  text-align: center;
+}
+
 .book-title {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding-top: 0.5rem;
+  height: 2rem;
+}
+
+.book-author {
+  font-size: 0.85rem;
+  padding-bottom: 1rem;
+}
+
+.book-author a {
+  text-decoration: none;
+  color: #4834d4;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.book-author a:hover {
+  color: #ff4757;
+}
+
+.btn-add-to-reading-list {
+  background-color: #3c40c6;
+  color: #c7ecee;
+  border: 1.25px solid var(--white);
+  border-radius: 1.25rem;
+  padding: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.btn-add-to-reading-list:hover,
+.btn-add-to-reading-list:active {
+  background-color: #c7ecee;
+  color: #3c40c6;
+}
+
+/* Media Queries */
+@media (max-width: 1550px) {
+  .book-group {
+    width: 15rem;
+  }
+
+  .book-image {
+    height: 23rem;
+  }
+
+  .book-title {
+    height: 4.1rem;
+    width: 85%;
+  }
+}
+
+@media (max-width: 1250px) {
+  .book-group {
+    width: 12rem;
+  }
+
+  .book-title {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .book-image {
+    height: 18rem;
+  }
+}
+
+@media (max-width: 1050px) {
+  .trending-section-title {
+    font-size: 2.25rem;
+  }
+
+  .trending-flex-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2rem;
+  }
+
+  .book-group {
+    width: 27rem;
+  }
+
+  .book-image {
+    height: 40rem;
+  }
+
+  .book-title {
+    height: 2.5rem;
+  }
+}
+
+@media (max-width: 778px) {
+  .trending-section-title {
+    font-size: 2rem;
+  }
+
+  .book-group {
+    width: 24rem;
+  }
+
+  .book-image {
+    height: 34rem;
+    background-position: center center;
+  }
+}
+
+@media (max-width: 650px) {
+  .trending-section-title {
+    font-size: 1.85rem;
+  }
+
+  .book-group {
+    width: 20rem;
+  }
+
+  .book-image {
+    height: 29rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .trending-section-title {
+    font-size: 1.4rem;
+  }
+
+  .trending-flex-container {
+    gap: 0;
+  }
+
+  .book-group {
+    width: 16rem;
+  }
+
+  .book-image {
+    height: 23rem;
+  }
+
+  .book-title {
+    font-size: 0.9rem;
+  }
+
+  .book-author {
+    font-size: 0.8rem;
+  }
+
+  .book-author a {
+    font-size: 0.8rem;
+  }
+
+  .btn-add-to-reading-list {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 440px) {
+  .trending-section-title {
+    font-size: 1.2rem;
+  }
+
+  .book-group {
+    width: 13rem;
+  }
+
+  .book-image {
+    height: 19rem;
+  }
+
+  .book-title {
+    font-size: 0.9rem;
+    width: 75%;
+  }
+
+  .btn-add-to-reading-list {
+    font-size: 0.75rem;
+    padding: 0.35rem;
+  }
+}
+
+@media (max-width: 395px) {
+  .trending-section-title {
+    font-size: 1rem;
+  }
+
+  .book-group {
+    width: 11rem;
+  }
+
+  .book-image {
+    height: 16rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .trending-section-title {
+    width: 75%;
+    margin: 0 auto;
+  }
 }

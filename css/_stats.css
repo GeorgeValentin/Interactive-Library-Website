@@ -7,7 +7,7 @@
 .stats-section-title {
   margin-bottom: 3rem;
   font-weight: 700;
-  font-size: var(--font-large);
+  font-size: 2.5rem;
 }
 
 .stats-group {
@@ -68,7 +68,7 @@
 }
 
 .stats-section-cover-img {
-  background-image: url("/resources/images/Book_Cover_Showcase_5.jpg");
+  background-image: url("/resources/images/Book_Cover_Stats_Showcase.jpg");
   background-size: cover;
   background-position: center 4%;
   border-radius: 0.25rem;
