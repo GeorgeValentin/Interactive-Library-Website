@@ -28,6 +28,8 @@
   width: 100%;
   border-radius: 0.25rem;
   margin: 0 auto;
+  z-index: 1;
+  position: relative;
 }
 
 .book-image#first-book {
@@ -44,6 +46,35 @@
 
 .book-image#fourth-book {
   background-image: url("../resources/images/billy_summers_cover.jpg");
+}
+
+/* -> Push the ratings container up and behind the image */
+.book-rating {
+  text-align: center;
+  transform: translateY(-100%);
+  z-index: -1;
+}
+
+.ratings-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ratings-group img {
+  height: 1.15rem;
+  padding-right: 0.4rem;
+}
+
+.ratings-group .ratings-count,
+img {
+  height: 1.5rem;
+}
+
+.ratings-count {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--grayishBlue);
 }
 
 .book-info {
