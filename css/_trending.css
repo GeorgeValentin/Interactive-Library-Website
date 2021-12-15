@@ -61,14 +61,10 @@
   justify-content: center;
 }
 
-.ratings-group img {
+.rating-star {
   height: 1.15rem;
   padding-right: 0.4rem;
-}
-
-.ratings-group .ratings-count,
-img {
-  height: 1.5rem;
+  color: #f9ca24;
 }
 
 .ratings-count {
