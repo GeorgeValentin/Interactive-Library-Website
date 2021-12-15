@@ -1,5 +1,5 @@
 .trending-section {
-  padding: 2rem 3rem 2rem;
+  padding: 2rem 3rem 3rem;
   background-color: hsla(0, 0%, 95%, 0.712);
 }
 
@@ -18,17 +18,6 @@
 
 .book-group {
   width: 20rem;
-}
-
-.book-image {
-  background-repeat: no-repeat;
-  height: 30rem;
-  background-position: center bottom;
-  background-size: cover;
-  width: 100%;
-  border-radius: 0.25rem;
-  margin: 0 auto;
-  z-index: 1;
   position: relative;
 }
 
@@ -48,11 +37,20 @@
   background-image: url("../resources/images/billy_summers_cover.jpg");
 }
 
+.book-image {
+  background-repeat: no-repeat;
+  height: 30rem;
+  background-position: center bottom;
+  background-size: cover;
+  width: 100%;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+}
+
 /* -> Push the ratings container up and behind the image */
 .book-rating {
   text-align: center;
-  transform: translateY(-100%);
-  z-index: -1;
+  padding-bottom: 0.65rem;
 }
 
 .ratings-group {
@@ -64,13 +62,13 @@
 .rating-star {
   height: 1.15rem;
   padding-right: 0.4rem;
-  color: #f9ca24;
+  color: #feca57;
 }
 
 .ratings-count {
   font-weight: 500;
   font-size: 1.1rem;
-  color: var(--grayishBlue);
+  color: #c8d6e5;
 }
 
 .book-info {
@@ -78,22 +76,38 @@
   text-align: center;
 }
 
+.book-overlay {
+  /* display: none; */
+  position: relative;
+  top: 20.625rem;
+  width: 100%;
+  background: linear-gradient(#341f97, #5f27cd);
+  color: var(--white);
+  transition-property: all;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in-out;
+  opacity: 0;
+  border-radius: 0.5rem;
+}
+
 .book-title {
   display: inline-block;
+  height: 2rem;
   font-weight: 700;
+  font-style: italic;
   font-size: 1.15rem;
   padding-top: 0.5rem;
-  height: 2rem;
+  color: var(--white);
 }
 
 .book-author {
-  font-size: 0.85rem;
-  padding-bottom: 1rem;
+  font-size: 1rem;
+  padding-bottom: 0.25rem;
 }
 
 .book-author a {
   text-decoration: none;
-  color: #4834d4;
+  color: var(--white);
   font-weight: 500;
   font-size: 1rem;
 }
@@ -104,18 +118,23 @@
 
 .btn-add-to-reading-list {
   background-color: #3c40c6;
-  color: #c7ecee;
+  color: var(--white);
   border: 1.25px solid var(--white);
-  border-radius: 1.25rem;
-  padding: 0.5rem;
+  border-radius: 0.2rem;
+  padding: 0.5rem 1rem;
   font-weight: 600;
   font-size: 1rem;
+  text-decoration: none;
 }
 
 .btn-add-to-reading-list:hover,
 .btn-add-to-reading-list:active {
   background-color: #c7ecee;
   color: #3c40c6;
+}
+
+.reading-list-bookmark {
+  padding-left: 1rem;
 }
 
 /* Media Queries */
@@ -126,11 +145,28 @@
 
   .book-image {
     height: 23rem;
+    padding: 0;
+  }
+
+  .book-overlay {
+    top: 13.624rem;
+  }
+
+  .book-author {
+    padding: 0;
+  }
+
+  .book-rating {
+    padding-bottom: 0.15rem;
+  }
+
+  .btn-add-to-reading-list {
+    padding: 0.3rem 1rem;
   }
 
   .book-title {
-    height: 4.1rem;
-    width: 85%;
+    padding-top: 0.2rem;
+    height: 3.6rem;
   }
 }
 
@@ -147,6 +183,10 @@
   .book-image {
     height: 18rem;
   }
+
+  .book-overlay {
+    top: 8.624rem;
+  }
 }
 
 @media (max-width: 1050px) {
@@ -159,7 +199,7 @@
     justify-content: center;
     align-items: center;
 
-    gap: 2rem;
+    gap: 5rem;
   }
 
   .book-group {
@@ -170,8 +210,17 @@
     height: 40rem;
   }
 
+  .book-overlay {
+    top: 30.625rem;
+  }
+
   .book-title {
     height: 2.5rem;
+  }
+
+  .btn-add-to-reading-list {
+    padding: 0.5rem 1.5rem;
+    margin: 0.5rem 0;
   }
 }
 
@@ -188,6 +237,10 @@
     height: 34rem;
     background-position: center center;
   }
+
+  .book-overlay {
+    top: 24.624rem;
+  }
 }
 
 @media (max-width: 650px) {
@@ -202,6 +255,10 @@
   .book-image {
     height: 29rem;
   }
+
+  .book-overlay {
+    top: 19.599rem;
+  }
 }
 
 @media (max-width: 550px) {
@@ -209,9 +266,9 @@
     font-size: 1.4rem;
   }
 
-  .trending-flex-container {
-    gap: 0;
-  }
+  /* .trending-flex-container {
+    gap: 2;
+  } */
 
   .book-group {
     width: 16rem;
@@ -219,6 +276,10 @@
 
   .book-image {
     height: 23rem;
+  }
+
+  .book-overlay {
+    top: 13.624rem;
   }
 
   .book-title {
@@ -239,6 +300,10 @@
 }
 
 @media (max-width: 440px) {
+  .trending-flex-container {
+    gap: 3rem;
+  }
+
   .trending-section-title {
     font-size: 1.2rem;
   }
@@ -249,6 +314,10 @@
 
   .book-image {
     height: 19rem;
+  }
+
+  .book-overlay {
+    top: 9.624rem;
   }
 
   .book-title {
@@ -274,9 +343,17 @@
   .book-image {
     height: 16rem;
   }
+
+  .book-overlay {
+    top: 6.624rem;
+  }
 }
 
 @media (max-width: 350px) {
+  .trending-flex-container {
+    gap: 4rem;
+  }
+
   .trending-section-title {
     width: 75%;
     margin: 0 auto;
