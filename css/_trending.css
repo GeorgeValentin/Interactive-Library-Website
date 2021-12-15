@@ -1,6 +1,7 @@
 .trending-section {
-  padding: 2rem 3rem 3rem;
+  padding: 1rem 3rem 3rem;
   background-color: hsla(0, 0%, 95%, 0.712);
+  position: relative;
 }
 
 .trending-section-title {
@@ -8,6 +9,7 @@
   font-size: 2.5rem;
   color: #3c40c6;
   font-weight: 700;
+  margin-top: 2.5rem;
 }
 
 .trending-flex-container {
@@ -87,7 +89,7 @@
   transition-duration: 150ms;
   transition-timing-function: ease-in-out;
   opacity: 0;
-  border-radius: 0.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
 }
 
 .book-title {
@@ -127,14 +129,92 @@
   text-decoration: none;
 }
 
-.btn-add-to-reading-list:hover,
-.btn-add-to-reading-list:active {
+.reading-list-bookmark {
+  padding-left: 1rem;
+}
+
+.btn-pressed {
   background-color: #c7ecee;
   color: #3c40c6;
 }
 
-.reading-list-bookmark {
-  padding-left: 1rem;
+/* -> this is the drop-down container */
+.reading-list-container {
+  display: none;
+  background-color: #686de0;
+  height: 1.389rem;
+  position: relative;
+  width: 20rem;
+  height: 2.5rem;
+
+  /* -> place the item on the right of the screen and allow items to wrap around it*/
+  float: right;
+  cursor: pointer;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1.3rem;
+  border-radius: 0.75rem;
+}
+
+/* -> center the title from the drop-down container both horizontally and vertically */
+.drop-down-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bookshelf-icon {
+  height: 2.5rem;
+}
+
+.drop-down-arrow {
+  position: absolute;
+  top: 0.28rem;
+  right: 1.2rem;
+}
+
+/* -> this is the drop-down items */
+.reading-list-drop-down {
+  display: none;
+  position: absolute;
+  top: 2.5rem;
+  border: none;
+  width: 20rem;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--white);
+  background-color: #34ace0;
+  border-radius: 0 0 0.75rem 0.75rem;
+  z-index: 1;
+}
+
+/* -> when hovering over the drop-down list coontainer */
+.reading-list-container:hover {
+  background-color: #4834d4;
+  border-radius: 0.75rem 0.75rem 0 0;
+}
+
+/* -> when hovering over the drop-down container set the display property of its children to block */
+.reading-list-container:hover .reading-list-drop-down {
+  display: block;
+}
+
+/* -> each drop-down item has padding of 1rem */
+.reading-list-drop-down div {
+  padding: 1rem;
+}
+
+/* -> when hovering over each drop-down item apply the styles mentioned */
+.reading-list-drop-down div:hover {
+  background-color: #30336b;
+  color: var(--white);
+  border-radius: 0;
+}
+
+/* -> make the last element of the drop-down have rounded corners at the bottom */
+.reading-list-drop-down div:last-child:hover {
+  border-radius: 0 0 0.75rem 0.75rem;
 }
 
 /* Media Queries */
@@ -222,6 +302,11 @@
     padding: 0.5rem 1.5rem;
     margin: 0.5rem 0;
   }
+
+  .reading-list-container {
+    float: none;
+    margin: auto;
+  }
 }
 
 @media (max-width: 778px) {
@@ -266,10 +351,6 @@
     font-size: 1.4rem;
   }
 
-  /* .trending-flex-container {
-    gap: 2;
-  } */
-
   .book-group {
     width: 16rem;
   }
@@ -296,6 +377,19 @@
 
   .btn-add-to-reading-list {
     font-size: 0.85rem;
+  }
+
+  .reading-list-container {
+    width: 17.5rem;
+    font-size: 1rem;
+  }
+
+  .drop-down-arrow {
+    top: 0.5rem;
+  }
+
+  .reading-list-container:hover .reading-list-drop-down {
+    width: 100%;
   }
 }
 
@@ -329,23 +423,28 @@
     font-size: 0.75rem;
     padding: 0.35rem;
   }
+
+  .reading-list-container {
+    width: 15.5rem;
+    font-size: 0.85rem;
+  }
 }
 
 @media (max-width: 395px) {
   .trending-section-title {
-    font-size: 1rem;
+    font-size: 1.9rem;
   }
 
   .book-group {
-    width: 11rem;
+    width: 15rem;
   }
 
   .book-image {
-    height: 16rem;
+    height: 21rem;
   }
 
   .book-overlay {
-    top: 6.624rem;
+    top: 11.624rem;
   }
 }
 
