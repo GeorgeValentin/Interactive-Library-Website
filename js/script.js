@@ -27,7 +27,7 @@ window.onload = () => {
   ];
   var readingList = [];
 
-  // Animate the book information
+  // Animate the book information (add the overlay on top of the books)
   for (let index = 0; index < bookRating.length; index++) {
     // Bring the overlay up (on top of the image)
     bookImg[index].addEventListener("mouseover", () => {

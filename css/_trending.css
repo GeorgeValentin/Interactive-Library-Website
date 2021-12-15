@@ -23,6 +23,11 @@
   position: relative;
 }
 
+.book-group:hover {
+  transform: scale(1.02);
+  transition: transform 400ms ease-in-out;
+}
+
 .book-image#first-book {
   background-image: url("../resources/images/beautiful_world_where_are_you_cover.jpg");
 }
@@ -165,6 +170,7 @@
 
 .bookshelf-icon {
   height: 2.5rem;
+  margin-right: 0.75rem;
 }
 
 .drop-down-arrow {
