@@ -94,7 +94,8 @@ window.onload = () => {
     }
   }
 
-  // -> Add the clear button as a child to the dropDownContainer
+  // -> Add the clearButton as a child to the dropDownContainer
+  // -> This button will empty the list
   function appendClearButtonToList(dropDownListContent, readingListContainer) {
     var btnClearList = document.querySelector(".btn-clear-list");
     readingListContainer.addEventListener("mouseenter", () => {
@@ -112,19 +113,21 @@ window.onload = () => {
     }
   }
 
+  // -> Set the text for the add buttons back to Reading List and the font awesome icon
   function reverseAddButtonText(addButtonArray) {
     for (let i = 0; i < addButtonArray.length; i++) {
       let btnText = document.createElement("button");
-      let fai = document.createElement("i");
+      let fontAwesomeIcon = document.createElement("i");
       btnText.innerHTML = "Reading List";
-      fai.classList.add("reading-list-bookmark");
-      fai.classList.add("fa-bookmark");
-      fai.classList.add("far");
-      btnText.appendChild(fai);
+      fontAwesomeIcon.classList.add("reading-list-bookmark");
+      fontAwesomeIcon.classList.add("fa-bookmark");
+      fontAwesomeIcon.classList.add("far");
+      btnText.appendChild(fontAwesomeIcon);
       buttonAddReadingList[i].innerHTML = btnText.innerHTML;
     }
   }
 
+  // -> Remove the list elements and as the list is now empty remove it as well
   function removeListElementsAndContainer(
     dropDownReadingList,
     readingListContainer,
