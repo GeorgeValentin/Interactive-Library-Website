@@ -54,35 +54,6 @@
   margin: 0 auto;
 }
 
-/* -> Push the ratings container up and behind the image */
-.book-rating {
-  text-align: center;
-  padding-bottom: 0.65rem;
-}
-
-.ratings-group {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.rating-star {
-  height: 1.15rem;
-  padding-right: 0.4rem;
-  color: #feca57;
-}
-
-.ratings-count {
-  font-weight: 500;
-  font-size: 1.1rem;
-  color: #c8d6e5;
-}
-
-.book-info {
-  height: 9.375rem;
-  text-align: center;
-}
-
 .book-overlay {
   /* display: none; */
   position: relative;
@@ -95,6 +66,11 @@
   transition-timing-function: ease-in-out;
   opacity: 0;
   border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.book-info {
+  height: 9.375rem;
+  text-align: center;
 }
 
 .book-title {
@@ -123,6 +99,32 @@
   color: #ff4757;
 }
 
+/* -> Ratings Section */
+/* -> Push the ratings container up and behind the image */
+.book-rating {
+  text-align: center;
+  padding-bottom: 0.65rem;
+}
+
+.ratings-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rating-star {
+  height: 1.15rem;
+  padding-right: 0.4rem;
+  color: #feca57;
+}
+
+.ratings-count {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #c8d6e5;
+}
+
+/* -> Button add to Reading List */
 .btn-add-to-reading-list {
   background-color: #3c40c6;
   color: var(--white);
@@ -138,19 +140,15 @@
   padding-left: 1rem;
 }
 
-.btn-pressed {
-  background-color: #c7ecee;
-  color: #3c40c6;
-}
-
+/* -> Drop-Down */
 /* -> this is the drop-down container */
 .reading-list-container {
   display: none;
   background-color: #686de0;
-  height: 1.389rem;
+  height: 2.5rem;
   position: relative;
   width: 20rem;
-  height: 2.5rem;
+  /* height: 2.5rem; */
 
   /* -> place the item on the right of the screen and allow items to wrap around it*/
   float: right;
@@ -179,7 +177,7 @@
   right: 1.2rem;
 }
 
-/* -> this is the drop-down items */
+/* -> theis is the drop-down items section */
 .reading-list-drop-down {
   display: none;
   position: absolute;
@@ -190,7 +188,7 @@
   font-size: 1.3rem;
   font-weight: 500;
   color: var(--white);
-  background-color: #34ace0;
+  background-color: #1b9cfc;
   border-radius: 0 0 0.75rem 0.75rem;
   z-index: 1;
 }
@@ -221,6 +219,38 @@
 /* -> make the last element of the drop-down have rounded corners at the bottom */
 .reading-list-drop-down div:last-child:hover {
   border-radius: 0 0 0.75rem 0.75rem;
+}
+
+/* -> elem used to identify the drop-down elements in js */
+.drop-down-elem {
+  font-size: inherit;
+}
+
+.btn-clear-list {
+  background-color: #dff9fb;
+  border: none;
+  color: #4834d4;
+  font-weight: 600;
+  border-radius: 0.7rem;
+  width: 65%;
+  margin: 0.5rem auto 0.75rem;
+  padding: 0.5rem 0;
+}
+
+.btn-clear-list:hover {
+  color: #fff;
+  background-color: #4834d4;
+}
+
+/* -> Helper Classes - used in js */
+.btn-pressed {
+  background-color: #c7ecee;
+  color: #3c40c6;
+}
+
+.disabled-button {
+  pointer-events: none;
+  cursor: none;
 }
 
 /* Media Queries */
