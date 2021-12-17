@@ -49,7 +49,7 @@ window.onload = () => {
       arrayOfButtons[index].addEventListener("click", () => {
         // Make the button stay pressed after you press it
         arrayOfButtons[index].classList.add("btn-pressed");
-        arrayOfButtons[index].innerHTML = "Added";
+        arrayOfButtons[index].textContent = "Added";
       });
     }
   }
@@ -87,7 +87,7 @@ window.onload = () => {
     let divToAdd = document.createElement("div");
 
     for (let i = 0; i < listOfBooks.length; i++) {
-      divToAdd.innerHTML = readingList[i];
+      divToAdd.textContent = readingList[i];
       divToAdd.classList.add("drop-down-elem");
 
       dropDownList.appendChild(divToAdd);
@@ -118,12 +118,12 @@ window.onload = () => {
     for (let i = 0; i < addButtonArray.length; i++) {
       let btnText = document.createElement("button");
       let fontAwesomeIcon = document.createElement("i");
-      btnText.innerHTML = "Reading List";
+      btnText.textContent = "Reading List";
       fontAwesomeIcon.classList.add("reading-list-bookmark");
       fontAwesomeIcon.classList.add("fa-bookmark");
       fontAwesomeIcon.classList.add("far");
       btnText.appendChild(fontAwesomeIcon);
-      buttonAddReadingList[i].innerHTML = btnText.innerHTML;
+      buttonAddReadingList[i].textContent = btnText.textContent;
     }
   }
 
