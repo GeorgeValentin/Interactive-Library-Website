@@ -6,7 +6,7 @@
     #1289a7,
     #006266
   );
-  padding: 3rem 3rem 4rem;
+  padding: 3rem 1rem 4rem;
 }
 
 .movies-section-title {
@@ -19,4 +19,189 @@
 .movies-carousel-img {
   width: 45rem;
   height: 46rem;
+}
+
+.carousel-item {
+  position: relative;
+}
+
+.movie-trailer {
+  width: 60.938rem;
+  height: 35.938rem;
+}
+
+.control-button {
+  position: absolute;
+  top: 38%;
+  left: 45%;
+  width: 10rem;
+  height: 10rem;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.play-button {
+  display: inline-block;
+}
+
+.pause-button {
+  display: none;
+}
+
+.control-button i {
+  font-size: 5rem;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+@media (max-width: 1150px) {
+  .movie-trailer {
+    width: 49.5rem;
+    height: 29.5rem;
+  }
+
+  .control-button {
+    top: 35%;
+    left: 44%;
+  }
+}
+
+@media (max-width: 950px) {
+  .control-button {
+    top: 34%;
+    left: 42%;
+  }
+
+  .control-button i {
+    font-size: 2.75rem;
+  }
+
+  .movie-trailer {
+    width: 40rem;
+    height: 25rem;
+  }
+}
+
+@media (max-width: 775px) {
+  .control-button {
+    top: 26%;
+    left: 38%;
+  }
+
+  .movie-trailer {
+    width: 31rem;
+    height: 19rem;
+  }
+}
+
+@media (max-width: 678px) {
+  .control-button {
+    top: 28%;
+    left: 37%;
+  }
+
+  .control-button i {
+    font-size: 2.5rem;
+  }
+
+  .movie-trailer {
+    width: 37rem;
+    height: 22rem;
+  }
+
+  .carousel-control-next,
+  .carousel-control-prev {
+    top: 386px;
+  }
+}
+
+@media (max-width: 660px) {
+  .movies-section-title {
+    font-size: 1.5rem;
+  }
+
+  .movie-trailer {
+    width: 28rem;
+    height: 18rem;
+  }
+
+  .control-button {
+    top: 24%;
+    left: 34%;
+  }
+
+  .carousel-control-next,
+  .carousel-control-prev {
+    top: 315px;
+  }
+}
+
+@media (max-width: 515px) {
+  .movie-trailer {
+    width: 23rem;
+    height: 14rem;
+  }
+
+  .control-button {
+    top: 16%;
+    left: 30%;
+  }
+
+  .carousel-control-next,
+  .carousel-control-prev {
+    top: 260px;
+  }
+}
+
+@media (max-width: 435px) {
+  .movies-section-title {
+    font-size: 1.25rem;
+  }
+
+  .movie-trailer {
+    width: 19rem;
+    height: 12rem;
+  }
+
+  .control-button {
+    top: 8%;
+    left: 26%;
+  }
+
+  .control-button i {
+    font-size: 2rem;
+  }
+
+  .carousel-control-next,
+  .carousel-control-prev {
+    top: 225px;
+  }
+}
+
+@media (max-width: 360px) {
+  .movie-trailer {
+    width: 17rem;
+    height: 11rem;
+  }
+
+  .control-button {
+    top: 10%;
+    left: 22%;
+  }
+
+  .control-button i {
+    font-size: 1.5rem;
+  }
+
+  .carousel-control-next,
+  .carousel-control-prev {
+    top: 220px;
+  }
 }

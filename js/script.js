@@ -175,4 +175,76 @@ window.onload = () => {
   }
 
   main();
+
+  //* Movie Carousel Section
+  const movieCarousel = document.querySelector("#movies-carousel");
+  const movies = document.querySelectorAll(".movie-trailer");
+  const carouselItems = document.querySelectorAll(".carousel-item");
+  const playButton = document.querySelectorAll(".play-button");
+  const pauseButton = document.querySelectorAll(".pause-button");
+
+  function pausePrevTrailerAfterSliding(carousel, carouselElements, movies) {
+    // this event is triggered after the sliding is complete
+    carousel.addEventListener("slid.bs.carousel", () => {
+      for (let i = 0; i < carouselElements.length; i++) {
+        // check to see which is the active carousel element
+        if (carouselItems[i].classList.contains("active")) {
+          // pause the trailer with the last index when sliding back to the first indexed one
+          // -> when index = 0 => pause the last video (we have written this for the case when we go from the last index back to the first index)
+          if (i === 0) {
+            movies[movies.length - 1].pause();
+          }
+          // otherwise pause the previous video
+          else {
+            movies[i - 1].pause();
+          }
+        }
+      }
+    });
+  }
+
+  function hideButton(buttonToHide) {
+    buttonToHide.style.display = "none";
+  }
+
+  function hideOneButtonAndShowAnother(showButton, hideButton) {
+    showButton.style.display = "block";
+    hideButton.style.display = "none";
+  }
+
+  function playTrailer() {
+    for (let i = 0; i < movies.length; i++) {
+      // play on click video screen
+      movies[i].addEventListener("click", () => {
+        // playing video
+        if (movies[i].paused) {
+          hideOneButtonAndShowAnother(pauseButton[i], playButton[i]);
+          movies[i].addEventListener("mouseenter", () => {
+            hideOneButtonAndShowAnother(pauseButton[i], playButton[i]);
+          });
+        }
+        // paused video
+        else {
+          hideOneButtonAndShowAnother(playButton[i], pauseButton[i]);
+
+          movies[i].addEventListener("mouseenter", () => {
+            hideOneButtonAndShowAnother(playButton[i], pauseButton[i]);
+          });
+        }
+
+        movies[i].addEventListener("mouseleave", () => {
+          hideButton(pauseButton[i]);
+          hideButton(playButton[i]);
+        });
+      });
+    }
+  }
+
+  function moviesCarouselSectionMain() {
+    pausePrevTrailerAfterSliding(movieCarousel, carouselItems, movies);
+
+    playTrailer();
+  }
+
+  moviesCarouselSectionMain();
 };
