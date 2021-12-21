@@ -212,27 +212,31 @@ window.onload = () => {
     hideButton.style.display = "none";
   }
 
-  function playTrailer() {
+  function playTrailer(deviceTypeEvent, beginningEvent, endingEvent) {
     for (let i = 0; i < movies.length; i++) {
       // play on click video screen
-      movies[i].addEventListener("click", () => {
-        // playing video
+      movies[i].addEventListener(deviceTypeEvent, () => {
+        // if the movies is paused
         if (movies[i].paused) {
+          // show the playButton directly and also when entering the video container after previously leaving it
           hideOneButtonAndShowAnother(pauseButton[i], playButton[i]);
-          movies[i].addEventListener("mouseenter", () => {
+          movies[i].addEventListener(beginningEvent, () => {
             hideOneButtonAndShowAnother(pauseButton[i], playButton[i]);
           });
         }
-        // paused video
+        // if the movie is playing
         else {
+          // show the pause button
           hideOneButtonAndShowAnother(playButton[i], pauseButton[i]);
 
-          movies[i].addEventListener("mouseenter", () => {
+          // show the pauseButton directly and also when entering the video container after previously leaving it
+          movies[i].addEventListener(beginningEvent, () => {
             hideOneButtonAndShowAnother(playButton[i], pauseButton[i]);
           });
         }
 
-        movies[i].addEventListener("mouseleave", () => {
+        // when leaving the video container hide both buttons
+        movies[i].addEventListener(endingEvent, () => {
           hideButton(pauseButton[i]);
           hideButton(playButton[i]);
         });
@@ -240,10 +244,28 @@ window.onload = () => {
     }
   }
 
+  function playTrailerUsingTouch(eventType) {
+    for (let i = 0; i < movies.length; i++) {
+      movies[i].addEventListener(eventType, () => {
+        // if the movie is paused play it and hide the buttons
+        if (movies[i].paused) {
+          movies[i].play();
+          hideButton(playButton[i]);
+          hideButton(pauseButton[i]);
+        }
+        // if the movie is playing pause it and show the playButton
+        else {
+          movies[i].pause();
+          hideOneButtonAndShowAnother(pauseButton[i], playButton[i]);
+        }
+      });
+    }
+  }
+
   function moviesCarouselSectionMain() {
     pausePrevTrailerAfterSliding(movieCarousel, carouselItems, movies);
-
-    playTrailer();
+    playTrailer("click", "mouseenter", "mouseleave");
+    playTrailerUsingTouch("touchstart");
   }
 
   moviesCarouselSectionMain();
