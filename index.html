@@ -365,7 +365,6 @@
 
 
     </section>
-    <hr>
 
     <section id="movies" class="movies-section">
 
@@ -373,38 +372,29 @@
             This Year's Big Screen Counterparts
         </h2>
 
-        <div id="movies-carousel" class="carousel slide" data-bs-ride="false" data-bs-interval="5000">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#movies-carousel" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#movies-carousel" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#movies-carousel" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
+        <div id="movies-carousel" class="carousel slide" data-bs-ride="false">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img id="carousel-img" class="movies-carousel-img" src="./resources/images/dune-book-cover.jpg"
-                        class="d-block w-100" alt="dune-book-cover">
+                <div class="carousel-item active" data-bs-interval="100000">
+                    <video class="dune-trailer movie-trailer" width="975" height="575"
+                        poster="./resources/images/Dune_Movie_Thumbnail.jpg" controls
+                        src="./resources/videos/Dune_Movie_Trailer.mp4"></video>
                 </div>
-                <div class="carousel-item">
-                    <img id="carousel-img" class="movies-carousel-img"
-                        src="./resources/images/to-all-the-boys-always-and-forever-book-cover.jpg" class="d-block w-100"
-                        alt="to-all-the-boys-book-cover">
+                <div class="carousel-item" data-bs-interval="200000">
+                    <video class="to-all-the-boys-trailer movie-trailer" width="975" height="575"
+                        poster="./resources/images/to-all-the-boys-always-and-forever-movie_thumbnail.jpg" controls
+                        src="./resources/videos/To_All_The_Boys_Always_and_Forever_Trailer.mp4"></video>
                 </div>
-                <div class="carousel-item">
-                    <img id="carousel-img" class="movies-carousel-img"
-                        src="./resources/images/chaos-walking-book-cover.jpg" class="d-block w-100"
-                        alt="chaos-walking-book-cover">
+                <div class="carousel-item" data-bs-interval="200000">
+                    <video class="chaos-walking-trailer movie-trailer" width="975" height="575"
+                        poster="./resources/images/Chaos_Walking_Movie_Thumbnail.jpg" controls
+                        src="./resources/videos/Chaos_Walking_Trailer.mp4"></video>
                 </div>
             </div>
-            <button class="carousel-control carousel-control-prev" type="button" data-bs-target="#movies-carousel"
-                data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#movies-carousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control carousel-control-next" type="button" data-bs-target="#movies-carousel"
-                data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#movies-carousel" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
