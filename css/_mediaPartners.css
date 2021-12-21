@@ -1,0 +1,32 @@
+/** Styling */
+.partners-container {
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8rem;
+  gap: 3rem;
+}
+
+.partner {
+  width: 10rem;
+  height: 6rem;
+  background: transparent;
+}
+
+.partner img {
+  width: 9rem;
+  height: 100%;
+}
+
+/* -> make the following logo's look more like a square */
+.partner .orange-logo {
+  width: 6rem;
+}
+.partner .telekom-logo {
+  width: 8rem;
+}
+.partner .snapchat-logo {
+  background-color: white;
+  width: 6rem;
+}
