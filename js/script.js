@@ -269,4 +269,61 @@ window.onload = () => {
   }
 
   moviesCarouselSectionMain();
+
+  //* Media Partners Section
+  const partners = document.querySelectorAll(".partner");
+
+  function createSoundObjects(mp3File) {
+    let soundObject = new Audio("../resources/sounds/" + mp3File + ".mp3");
+    return soundObject;
+  }
+
+  function playSound(element) {
+    switch (element) {
+      case "vodafone-logo":
+        let vodafoneSound = createSoundObjects("vodafone_sound");
+        vodafoneSound.play();
+        break;
+
+      case "intel-logo":
+        let intelSound = createSoundObjects("intel_sound");
+        intelSound.play();
+        break;
+
+      case "microsoft-logo":
+        let microsoftSound = createSoundObjects("microsoft_sound");
+        microsoftSound.play();
+        break;
+
+      case "orange-logo":
+        let orangeSound = createSoundObjects("orange_sound");
+        orangeSound.play();
+        break;
+
+      case "telekom-logo":
+        let telekomSound = createSoundObjects("telekom_sound");
+        telekomSound.play();
+        break;
+
+      case "snapchat-logo":
+        let snapchatSound = createSoundObjects("snapchat_sound");
+        snapchatSound.play();
+        break;
+    }
+  }
+
+  function playSoundOnHover(arrOfElements) {
+    for (let i = 0; i < arrOfElements.length; i++) {
+      arrOfElements[i].addEventListener("mouseenter", () => {
+        let logoClass = arrOfElements[i].childNodes[1].classList[0];
+        playSound(logoClass);
+      });
+    }
+  }
+
+  function mediaPartnersSectionMain() {
+    playSoundOnHover(partners);
+  }
+
+  mediaPartnersSectionMain();
 };
