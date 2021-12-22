@@ -256,7 +256,7 @@ window.onload = () => {
         // if the movie is playing pause it and show the playButton
         else {
           movies[i].pause();
-          hideOneButtonAndShowAnother(pauseButton[i], playButton[i]);
+          hideOneButtonAndShowAnother(playButton[i], pauseButton[i]);
         }
       });
     }
