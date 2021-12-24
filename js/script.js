@@ -312,9 +312,9 @@ window.onload = () => {
     }
   }
 
-  function playSoundOnHover(arrOfElements) {
+  function playSoundOnInteraction(arrOfElements, userEvent) {
     for (let i = 0; i < arrOfElements.length; i++) {
-      arrOfElements[i].addEventListener("mouseenter", () => {
+      arrOfElements[i].addEventListener(userEvent, () => {
         let logoClass = arrOfElements[i].childNodes[1].classList[0];
         playSound(logoClass);
       });
@@ -322,7 +322,7 @@ window.onload = () => {
   }
 
   function mediaPartnersSectionMain() {
-    playSoundOnHover(partners);
+    playSoundOnInteraction(partners, "click");
   }
 
   mediaPartnersSectionMain();

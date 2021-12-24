@@ -36,7 +36,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./resources/images/website_favicon/favicon-16x16.png">
     <link rel="manifest" href="./resources/images/website_favicon/site.webmanifest">
 
-    <title>OurApp</title>
+    <title>ReaderX</title>
 </head>
 
 <body>
@@ -419,40 +419,73 @@
     </section>
     <hr>
 
-    <section id="contact-form-section" class="submit-form">
-        <form class="form-elements" onsubmit="return false">
-            <div>
-                <input type="text" class="input-book-title" name="bookTitle" placeholder="Book title">
-            </div>
-            <div>
-                <input type="text" class="input-book-author" name="bookAuthor" placeholder="Book author">
-            </div>
-            <div class="book-languages">
-                <input type="checkbox" name="English">English
-                <input type="checkbox" name="French">French
-                <input type="checkbox" name="Romina">Romina
-            </div>
-            <div class="book-volumes">
-                <input type="number" placeholder="Please enter a number" min="1" max="5">
-            </div>
-            <div class="book-genre">
-                <select>
+    <section id="contact-form-section" class="req-books-section">
+
+        <h2 class="req-books-section-title">Have any books in mind that you think are worth it?</h2>
+
+        <form class="req-books-form centered-flex" onsubmit="return false">
+
+            <section class="form-field">
+                <input type="text" class="input-book-title form-field-text" name="bookTitle" placeholder="Book Title">
+            </section>
+
+            <section class="form-field">
+                <input type="text" class="input-book-author form-field-text" name="bookAuthor"
+                    placeholder="Book Author">
+            </section>
+
+            <section class="book-languages form-field centered-flex">
+
+                <section class="lang-elem romanian-lang">
+                    <input type="checkbox" name="Romanian">
+                    <div class="language-name">
+                        Romanian
+                    </div>
+                </section>
+
+                <section class="lang-elem english-lang">
+                    <input type="checkbox" name="English">
+                    <div class="language-name">
+                        English
+                    </div>
+                </section>
+
+                <section class="lang-elem french-lang">
+                    <input type="checkbox" name="French">
+                    <div class="language-name">
+                        French
+                    </div>
+                </section>
+            </section>
+
+            <section class="number-of-volumes form-field">
+                <input class="form-field-text" type="number" placeholder="Please enter the number of books" min="1"
+                    max="5">
+            </section>
+
+            <section class="book-genre form-field">
+                <select class="form-field-text">
                     <option value="SF">SF</option>
                     <option value="Action">Action</option>
                     <option value="Adventure">Adventure</option>
                     <option value="Cops">Cops</option>
                 </select>
-            </div>
-            <div>
-                <input class="input-book-replacer" name="bookReplacer" placeholder="Please enter a book title">
-            </div>
-            <button type="submit" class="btn-sent">Submit!</button>
+            </section>
+
+            <section class="form-field">
+                <input class="input-book-replacer form-field-text" name="bookReplacer"
+                    placeholder="Please enter a book title">
+            </section>
+
+            <button type="submit" class="btn-send">Submit!</button>
+
         </form>
     </section>
     <hr>
 
     <section id="reviews" class="user-reviews">
         <div class="title">What people are saying...</div>
+
         <div class="review">
             <div class="image">
                 image
