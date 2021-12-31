@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+
+    <title>ReaderX</title>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +39,12 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./resources/images/website_favicon/favicon-16x16.png">
     <link rel="manifest" href="./resources/images/website_favicon/site.webmanifest">
 
-    <title>ReaderX</title>
+    <!-- Add the Leaflet Js Library (Open Source Library for mobile-friendly interactive maps) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>    
 </head>
 
 <body>
@@ -490,7 +498,7 @@
                 <input required type="email" minlength="12" maxlength="35" id="user-email" class="input-user-email form-field-text" name="userEmail" placeholder="Enter your email address">
             </section>
 
-            <button type="submit" class="btn-send">Suggest!<i class="fas fa-plus-square"></i></button>
+            <button type="submit" class="btn-send">Make Suggestion!<i class="fas fa-plus-square"></i></button>
 
             <!-- show this when the user sends the form -->
             <div class="popup">
@@ -562,12 +570,11 @@
     </section>
     <hr>
 
-    <section id="contact-and-map-section" class="mapping">
-        <div class="RO-map">
-            Harta romaniei
-        </div>
+    <section id="location-section" class="map-section">
+        <h2 class="map-section-title"> Are you a passionate reader? If so, we are looking forward to meet you at one of our location!</h2>
+
+            <div id="mapLocation"></div>
     </section>
-    <hr>
 
     <footer class="footer">
 
@@ -613,7 +620,7 @@
 
             <section class="footer-links col1">
                 <a href="#intro-section">About Us</a>
-                <a href="#contact-and-map-section">Contact</a>
+                <a href="#location-section">Location</a>
                 <a href="#audio-books-section">Audio Books</a>
             </section>
 

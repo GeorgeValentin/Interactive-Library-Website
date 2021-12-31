@@ -1,6 +1,5 @@
 window.onload = () => {
   //* Trending Section
-
   // -> Select the DOM elements
   let bookImg = document.querySelectorAll(".book-image");
   let bookOverlay = document.querySelectorAll(".book-overlay");
@@ -36,7 +35,7 @@ window.onload = () => {
         overlay[index].style.opacity = "1";
         overlay[index].style.transition = "all 400ms ease-in-out";
 
-        bookAuthorLink[index].style.pointerEvents = "all"
+        bookAuthorLink[index].style.pointerEvents = "all";
       });
 
       // Put the overlay back (behind the image)
@@ -44,8 +43,7 @@ window.onload = () => {
         overlay[index].style.opacity = "0";
         overlay[index].style.transition = "all 400ms ease-in-out";
 
-        bookAuthorLink[index].style.pointerEvents = "none"
-
+        bookAuthorLink[index].style.pointerEvents = "none";
       });
     }
   }
@@ -291,7 +289,7 @@ window.onload = () => {
   function preventDigitsInput(element, inputEvent) {
     element.addEventListener(inputEvent, (e) => {
       let char = String.fromCharCode(e.which);
-  
+
       // prevent the input from accepting digits
       if (/[0-9]/.test(char)) {
         e.preventDefault();
@@ -301,12 +299,13 @@ window.onload = () => {
 
   function sendForm(button, buttonEvent) {
     button.addEventListener(buttonEvent, () => {
-
       // use the HTML constraint validation API to check if the inputs are valid
-      if(inputBookAuthor.checkValidity() 
-      && inputBookTitle.checkValidity() 
-      && inputNumberOfVolumes.checkValidity() 
-      && inputUserEmail.checkValidity()) {
+      if (
+        inputBookAuthor.checkValidity() &&
+        inputBookTitle.checkValidity() &&
+        inputNumberOfVolumes.checkValidity() &&
+        inputUserEmail.checkValidity()
+      ) {
         // after sending the form clear the inputs
         setTimeout(() => {
           for (let i = 0; i < checkBoxes.length; i++) {
@@ -319,23 +318,23 @@ window.onload = () => {
         }, 200);
 
         // show the popup text
-        popupText.classList.add("show")
+        popupText.classList.add("show");
 
         // after 2.5s hide it
         setTimeout(() => {
-          popupText.classList.remove("show")
-        }, 3500)
+          popupText.classList.remove("show");
+        }, 3500);
       }
     });
   }
 
   function requestBooksSectionMain() {
-    preventDigitsInput(inputBookAuthor, "keydown")
+    preventDigitsInput(inputBookAuthor, "keydown");
 
-    sendForm(btnSend, "click")    
+    sendForm(btnSend, "click");
   }
 
-  requestBooksSectionMain()
+  requestBooksSectionMain();
 
   //* Media Partners Section
   const partners = document.querySelectorAll(".partner");
@@ -393,4 +392,31 @@ window.onload = () => {
   }
 
   mediaPartnersSectionMain();
+
+  //* Map section
+  function mapSectionMain() {
+    let map = L.map("mapLocation").setView([44.43225, 26.10626], 13);
+    L.tileLayer(
+      "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw",
+      {
+        maxZoom: 18,
+        attribution:
+          'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+          'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: "mapbox/streets-v11",
+        tileSize: 512,
+        zoomOffset: -1,
+      }
+    ).addTo(map);
+    L.marker([44.450279, 26.077732])
+      .addTo(map)
+      .bindPopup("Bulevardul Alexandru Ioan Cuza 38-44, București")
+      .openPopup();
+    L.marker([44.432779, 26.122796])
+      .addTo(map)
+      .bindPopup("Calea Calarasi, București")
+      .openPopup();
+  }
+  mapSectionMain();
+
 };
