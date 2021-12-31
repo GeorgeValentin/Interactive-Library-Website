@@ -280,6 +280,8 @@ window.onload = () => {
   //* Request Books Section
   const inputBookAuthor = document.querySelector(".input-book-author");
   const inputBookTitle = document.querySelector(".input-book-title");
+  const inputUserEmail = document.querySelector(".input-user-email");
+  let popupText = document.querySelector(".popup-mail-sent-text");
   const checkBoxes = document.querySelectorAll(".checkbox-input");
   const inputNumberOfVolumes = document.querySelector(
     ".number-of-volumes-input"
@@ -299,28 +301,38 @@ window.onload = () => {
 
   function sendForm(button, buttonEvent) {
     button.addEventListener(buttonEvent, () => {
-      // after sending the form clear the inputs
-      setTimeout(() => {
-        inputBookAuthor.value = null;
-        inputBookTitle.value = null;
-  
-        for (let i = 0; i < checkBoxes.length; i++) {
-          checkBoxes[i].checked = false;
-        }
-  
-        inputNumberOfVolumes.value = "";
-      }, 200);
-  
-      // Move this into a nice pop-up
-      console.log(
-        "You will receive an email from us with the date the book will be available in our  library"
-      );
+
+      // use the HTML constraint validation API to check if the inputs are valid
+      if(inputBookAuthor.checkValidity() 
+      && inputBookTitle.checkValidity() 
+      && inputNumberOfVolumes.checkValidity() 
+      && inputUserEmail.checkValidity()) {
+        // after sending the form clear the inputs
+        setTimeout(() => {
+          for (let i = 0; i < checkBoxes.length; i++) {
+            checkBoxes[i].checked = false;
+          }
+          inputBookAuthor.value = null;
+          inputBookTitle.value = null;
+          inputNumberOfVolumes.value = "";
+          inputUserEmail.value = null;
+        }, 200);
+
+        // show the popup text
+        popupText.classList.add("show")
+
+        // after 2.5s hide it
+        setTimeout(() => {
+          popupText.classList.remove("show")
+        }, 3500)
+      }
     });
   }
 
   function requestBooksSectionMain() {
     preventDigitsInput(inputBookAuthor, "keydown")
-    sendForm(btnSend, "click")
+
+    sendForm(btnSend, "click")    
   }
 
   requestBooksSectionMain()

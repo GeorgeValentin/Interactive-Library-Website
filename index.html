@@ -425,52 +425,59 @@
         <form class="req-books-form centered-flex" onsubmit="return false">
 
             <section class="form-field">
-                <input required type="text" minlength="2" maxlength="25" class="input-book-title form-field-text" name="bookTitle" placeholder="Enter the book title">
+                <label for="book-title" class="form-labels-text">Book Title:</label>
+                <input required type="text" minlength="2" maxlength="25" id="book-title" class="input-book-title form-field-text" name="bookTitle" placeholder="Enter the book title">
             </section>
 
             <section class="form-field">
-                <input required type="text" minlength="5" maxlength="25" class="input-book-author form-field-text" name="bookAuthor"
+                <label for="book-author" class="form-labels-text">Book Author:</label>
+                <input required type="text" minlength="5" maxlength="25" id="book-author" class="input-book-author form-field-text" name="bookAuthor"
                     placeholder="Enter the book author">
             </section>
 
+            <!-- "Languages" -> display checkboxes on medium-large screens -->
+            <label class="checkbox-label form-labels-text">Choose Language:</label>
             <section class="book-languages form-field centered-flex">
+                <div class="lang-elem romanian-lang">
+                    <input id="romanian" class="checkbox-input" type="checkbox" name="Romanian">
+                    <label class="form-field-text" for="romanian">Romanian</label>
+                </div>
+                <div class="lang-elem english-lang">
+                    <input id="english" class="checkbox-input" type="checkbox" name="English">
+                    <label class="form-field-text" for="english">English</label>
+                </div>
 
-                <section class="lang-elem romanian-lang">
-                    <input class="checkbox-input" type="checkbox" name="Romanian">
-                    <div class="language-name">
-                        Romanian
-                    </div>
-                </section>
+                <div class="lang-elem french-lang">
+                    <input id="french" class="checkbox-input" type="checkbox" name="French">
+                    <label class="form-field-text" for="french">French</label>
+                </div>
 
-                <section class="lang-elem english-lang">
-                    <input class="checkbox-input" type="checkbox" name="English">
-                    <div class="language-name">
-                        English
-                    </div>
-                </section>
+                <div class="lang-elem german-lang">
+                    <input id="german" class="checkbox-input" type="checkbox" name="German">
+                    <label class="form-field-text" for="german">German</label>
+                </div>
+            </section>
 
-                <section class="lang-elem french-lang">
-                    <input class="checkbox-input" type="checkbox" name="French">
-                    <div class="language-name">
-                        French
-                    </div>
-                </section>
-
-                <section class="lang-elem french-lang">
-                    <input class="checkbox-input" type="checkbox" name="French">
-                    <div class="language-name">
-                        German
-                    </div>
-                </section>
+            <!-- "Languages" -> display a drop-down on small screens -->
+            <section class="book-lang-dropdown form-field">
+                <label for="book-lang" class="form-labels-text">Choose Language:</label>
+                <select id="book-lang" class="form-field-text">
+                    <option value="SF">Romanian</option>
+                    <option value="Action">English</option>
+                    <option value="Adventure">French</option>
+                    <option value="Cops">German</option>
+                </select>
             </section>
 
             <section class="number-of-volumes form-field">
-                <input required class="number-of-volumes-input form-field-text" type="number" placeholder="Enter the number of volumes" min="1"
+                <label for="volumes-number" class="form-labels-text">Number of volumes:</label>
+                <input required id="volumes-number" class="number-of-volumes-input form-field-text" type="number" placeholder="Amount of Volumes" min="1"
                     max="5">
             </section>
 
             <section class="book-genre form-field">
-                <select class="form-field-text">
+                <label for="book-genre" class="form-labels-text">Book Genre:</label>
+                <select id="book-genre" class="form-field-text">
                     <option value="SF">SF</option>
                     <option value="Action">Action</option>
                     <option value="Adventure">Adventure</option>
@@ -478,7 +485,19 @@
                 </select>
             </section>
 
-            <button type="submit" class="btn-send">Submit!</button>
+            <section class="form-field">
+                <label for="user-email" class="form-labels-text">Email:</label>
+                <input required type="email" minlength="12" maxlength="35" id="user-email" class="input-user-email form-field-text" name="userEmail" placeholder="Enter your email address">
+            </section>
+
+            <button type="submit" class="btn-send">Suggest!<i class="fas fa-plus-square"></i></button>
+
+            <!-- show this when the user sends the form -->
+            <div class="popup">
+                <span class="popup-mail-sent-text">
+                    We will contact you on your email when the book will be available!
+                </span>
+            </div>
 
         </form>
     </section>
