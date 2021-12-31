@@ -99,6 +99,10 @@
   color: #ff4757;
 }
 
+.book-author-link {
+  pointer-events: none;
+}
+
 /* -> Ratings Section */
 /* -> Push the ratings container up and behind the image */
 .book-rating {

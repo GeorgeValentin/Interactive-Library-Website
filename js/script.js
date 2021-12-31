@@ -25,6 +25,8 @@ window.onload = () => {
     " Billy Summers",
   ];
 
+  let bookAuthorLink = document.querySelectorAll(".book-author-link");
+
   // -> Animate Overlay
   // Animate the book information (add the overlay on top of the books)
   function animateOverlay(backgroundImage, overlay) {
@@ -33,12 +35,17 @@ window.onload = () => {
       backgroundImage[index].addEventListener("mouseover", () => {
         overlay[index].style.opacity = "1";
         overlay[index].style.transition = "all 400ms ease-in-out";
+
+        bookAuthorLink[index].style.pointerEvents = "all"
       });
 
       // Put the overlay back (behind the image)
       backgroundImage[index].addEventListener("mouseout", () => {
         overlay[index].style.opacity = "0";
         overlay[index].style.transition = "all 400ms ease-in-out";
+
+        bookAuthorLink[index].style.pointerEvents = "none"
+
       });
     }
   }
@@ -269,6 +276,54 @@ window.onload = () => {
   }
 
   moviesCarouselSectionMain();
+
+  //* Request Books Section
+  const inputBookAuthor = document.querySelector(".input-book-author");
+  const inputBookTitle = document.querySelector(".input-book-title");
+  const checkBoxes = document.querySelectorAll(".checkbox-input");
+  const inputNumberOfVolumes = document.querySelector(
+    ".number-of-volumes-input"
+  );
+  const btnSend = document.querySelector(".btn-send");
+
+  function preventDigitsInput(element, inputEvent) {
+    element.addEventListener(inputEvent, (e) => {
+      let char = String.fromCharCode(e.which);
+  
+      // prevent the input from accepting digits
+      if (/[0-9]/.test(char)) {
+        e.preventDefault();
+      }
+    });
+  }
+
+  function sendForm(button, buttonEvent) {
+    button.addEventListener(buttonEvent, () => {
+      // after sending the form clear the inputs
+      setTimeout(() => {
+        inputBookAuthor.value = null;
+        inputBookTitle.value = null;
+  
+        for (let i = 0; i < checkBoxes.length; i++) {
+          checkBoxes[i].checked = false;
+        }
+  
+        inputNumberOfVolumes.value = "";
+      }, 200);
+  
+      // Move this into a nice pop-up
+      console.log(
+        "You will receive an email from us with the date the book will be available in our  library"
+      );
+    });
+  }
+
+  function requestBooksSectionMain() {
+    preventDigitsInput(inputBookAuthor, "keydown")
+    sendForm(btnSend, "click")
+  }
+
+  requestBooksSectionMain()
 
   //* Media Partners Section
   const partners = document.querySelectorAll(".partner");

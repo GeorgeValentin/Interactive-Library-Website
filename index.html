@@ -209,7 +209,7 @@
                             </section>
 
                             <section class="book-author">
-                                By: <a target="_blank" href="https://en.wikipedia.org/wiki/Sally_Rooney">Sally
+                                By: <a class="book-author-link" target="_blank" href="https://en.wikipedia.org/wiki/Sally_Rooney">Sally
                                     Rooney</a>
                             </section>
 
@@ -251,7 +251,7 @@
                             </section>
 
                             <section class="book-author">
-                                By: <a target="_blank" href="https://en.wikipedia.org/wiki/Casey_McQuiston">Casey
+                                By: <a class="book-author-link" target="_blank" href="https://en.wikipedia.org/wiki/Casey_McQuiston">Casey
                                     McQuiston</a>
                             </section>
 
@@ -294,7 +294,7 @@
                             </section>
 
                             <section class="book-author">
-                                By: <a target="_blank"
+                                By: <a class="book-author-link" target="_blank"
                                     href="https://en.wikipedia.org/wiki/Honor%C3%A9e_Fanonne_Jeffers">Honoree
                                     Jeffers</a>
                             </section>
@@ -337,7 +337,7 @@
                             </section>
 
                             <section class="book-author">
-                                By: <a target="_blank" href="https://en.wikipedia.org/wiki/Stephen_King">Stephen
+                                By: <a class="book-author-link" target="_blank" href="https://en.wikipedia.org/wiki/Stephen_King">Stephen
                                     King</a>
                             </section>
 
@@ -417,7 +417,6 @@
             </button>
         </div>
     </section>
-    <hr>
 
     <section id="contact-form-section" class="req-books-section">
 
@@ -426,40 +425,47 @@
         <form class="req-books-form centered-flex" onsubmit="return false">
 
             <section class="form-field">
-                <input type="text" class="input-book-title form-field-text" name="bookTitle" placeholder="Book Title">
+                <input required type="text" minlength="2" maxlength="25" class="input-book-title form-field-text" name="bookTitle" placeholder="Enter the book title">
             </section>
 
             <section class="form-field">
-                <input type="text" class="input-book-author form-field-text" name="bookAuthor"
-                    placeholder="Book Author">
+                <input required type="text" minlength="5" maxlength="25" class="input-book-author form-field-text" name="bookAuthor"
+                    placeholder="Enter the book author">
             </section>
 
             <section class="book-languages form-field centered-flex">
 
                 <section class="lang-elem romanian-lang">
-                    <input type="checkbox" name="Romanian">
+                    <input class="checkbox-input" type="checkbox" name="Romanian">
                     <div class="language-name">
                         Romanian
                     </div>
                 </section>
 
                 <section class="lang-elem english-lang">
-                    <input type="checkbox" name="English">
+                    <input class="checkbox-input" type="checkbox" name="English">
                     <div class="language-name">
                         English
                     </div>
                 </section>
 
                 <section class="lang-elem french-lang">
-                    <input type="checkbox" name="French">
+                    <input class="checkbox-input" type="checkbox" name="French">
                     <div class="language-name">
                         French
+                    </div>
+                </section>
+
+                <section class="lang-elem french-lang">
+                    <input class="checkbox-input" type="checkbox" name="French">
+                    <div class="language-name">
+                        German
                     </div>
                 </section>
             </section>
 
             <section class="number-of-volumes form-field">
-                <input class="form-field-text" type="number" placeholder="Please enter the number of books" min="1"
+                <input required class="number-of-volumes-input form-field-text" type="number" placeholder="Enter the number of volumes" min="1"
                     max="5">
             </section>
 
@@ -470,11 +476,6 @@
                     <option value="Adventure">Adventure</option>
                     <option value="Cops">Cops</option>
                 </select>
-            </section>
-
-            <section class="form-field">
-                <input class="input-book-replacer form-field-text" name="bookReplacer"
-                    placeholder="Please enter a book title">
             </section>
 
             <button type="submit" class="btn-send">Submit!</button>

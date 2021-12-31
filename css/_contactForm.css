@@ -1,5 +1,5 @@
 .req-books-section {
-  padding: 2rem 3rem 4rem;
+  padding: 4rem 3rem 5rem;
   background-image: url("../resources/images/form-section-background.png");
   background-color: #3c40c6;
   color: white;
@@ -17,12 +17,12 @@
 }
 
 .req-books-form .form-field:not(.book-languages) {
-  width: 20rem;
+  width: 35rem;
   display: inline-block;
 }
 
 .form-field {
-  padding-bottom: 1.25rem;
+  padding-bottom: 1.5rem;
 }
 
 .form-field input {
@@ -37,7 +37,8 @@
 
 .book-languages {
   flex-direction: row;
-  gap: 3.75rem;
+  gap: 6.1rem;
+  justify-content: space-between;
 }
 
 .lang-elem input {
@@ -46,15 +47,16 @@
 
 .btn-send {
   cursor: pointer;
-  width: 20rem;
+  width: 35rem;
   text-align: center;
   font-size: 1.15rem;
   font-weight: 600;
   border: none;
   border-radius: 1rem;
-  line-height: 2;
+  line-height: 2.5;
   background-color: #34ace0;
   color: #dff9fb;
+  margin-top: 2rem;
 }
 
 .btn-send:hover {
