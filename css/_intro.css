@@ -12,26 +12,38 @@
   padding: 2.188rem 3rem;
 }
 
+.intro-cover-container {
+  height: 100%;
+}
+
 .intro-cover {
   background-image: url("/resources/images/Intro_Section_Cover.jpg");
   background-size: cover;
   background-position: center center;
-  height: 100%;
+  background-repeat: no-repeat;
+  height: inherit;
+  width: inherit;
   border-radius: 0.5rem;
+}
+
+.intro-content {
+  height: 100%;
 }
 
 .intro-credits {
   font-size: 1.25rem;
+  font-style: italic;
 }
 
 .intro-title {
+  height: 4rem;
   font-size: 2.5rem;
   font-weight: 700;
   padding-bottom: 1rem;
 }
 
 .website-intro-logo {
-  height: 3.5rem;
+  height: 95%;
   position: relative;
   bottom: 0.2rem;
 }
@@ -54,26 +66,48 @@
     padding: 2.188rem 0;
   }
 
+  .intro-cover-container {
+    width: 85%;
+    height: 32rem;
+    margin: 0 auto 1rem;
+  }
+
   .intro-cover {
-    width: 75%;
     margin: 0 auto;
   }
 
   .intro-content {
     grid-row-start: 2;
-    width: 75%;
+    width: 85%;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .intro-description {
+    width: 85%;
   }
 }
 
 /* Tablet Screens */
+@media(max-width: 965px) {
+  .intro-description {
+    width: 85%;
+  }
+}
+
+@media(max-width: 860px) {
+  .intro-description {
+    width: 90%;
+  }
+}
 
 /* Mobile Phone Screens */
 @media (max-width: 550px) {
-  /* Intro Section */
   .intro-cover {
-    width: 80%;
-    background-size: 30rem 20rem;
+    width: 100%;
+    background-size: 30rem 32rem;
   }
 
   .intro-content > div {
@@ -87,5 +121,61 @@
 
   .website-intro-logo {
     height: 3.25rem;
+  }
+
+  .intro-description {
+    font-size: 1.15rem;
+    width:100%;
+  }
+}
+
+@media(max-width:475px) {
+  .intro-cover-container {
+    height: 26rem;
+  }
+
+  .intro-cover {
+    width: 85%;
+    background-size: 27rem 26rem;
+  }
+
+  .intro-description {
+    font-size: 1.05rem;
+    width: 85%;
+  }
+}
+
+@media(max-width:420px) {
+  .intro-cover-container {
+    height: 23rem;
+  }
+
+  .intro-cover {
+    width: 85%;
+    background-size: 23rem 23rem;
+  }
+  .intro-description {
+    width: 95%;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .intro-cover-container {
+    height: 23rem;
+  }
+  
+  .intro-cover {
+    width: 90%;
+    background-size: 20rem 23rem;
+  }
+
+  .intro-title {
+    font-size: 2rem;
+  }
+
+  .website-intro-logo {
+    height: 2.75rem;
+    bottom:0.1rem;
   }
 }

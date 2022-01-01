@@ -417,6 +417,7 @@ window.onload = () => {
       .bindPopup("Calea Calarasi, București")
       .openPopup();
   }
+  
   mapSectionMain();
 
 };
