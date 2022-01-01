@@ -1,0 +1,31 @@
+.users-reviews {
+    background-color: #34ace0;
+    padding: 3rem 3rem 3rem;
+}
+
+.user-review-text {
+    font-size: 3rem;
+    line-height: 1;
+    width: 60%;
+    margin: 0 auto 2rem;
+    color: white;
+    font-weight: 600;
+}
+
+.user-review-image {
+  width: 5rem;
+  margin: 1.25rem;
+  border: 3.5px solid white;
+  border-radius: 50%;
+}
+
+.andreea-avatar {
+  background-color: #4834d4;
+  border-radius: 50%;
+}
+
+.user-details {
+    font-size: 1.25rem;
+    font-weight: 550;
+    color: var(--veryLightGray);
+}
