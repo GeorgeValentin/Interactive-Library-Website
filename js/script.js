@@ -188,6 +188,24 @@ window.onload = () => {
   const playButton = document.querySelectorAll(".play-button");
   const pauseButton = document.querySelectorAll(".pause-button");
 
+  function handleButtonsAfterSliding(
+    movie,
+    playBtn,
+    pauseBtn,
+    videoInteractEvent
+  ) {
+    if (movie.paused) {
+      // hideButton(pauseBtn)
+      movie.addEventListener(videoInteractEvent, () => {
+        hideOneButtonAndShowAnother(playBtn, pauseBtn);
+      });
+    } else {
+      movie.addEventListener(videoInteractEvent, () => {
+        hideOneButtonAndShowAnother(pauseBtn, playBtn);
+      });
+    }
+  }
+
   function pausePrevTrailerAfterSliding(carousel, carouselElements, movies) {
     // this event is triggered after the sliding is complete
     carousel.addEventListener("slid.bs.carousel", () => {
@@ -196,12 +214,45 @@ window.onload = () => {
         if (carouselItems[i].classList.contains("active")) {
           // pause the trailer with the last index when sliding back to the first indexed one
           // -> when index = 0 => pause the last video (we have written this for the case when we go from the last index back to the first index)
-          if (i === 0) {
-            movies[movies.length - 1].pause();
-          }
-          // otherwise pause the previous video
-          else {
-            movies[i - 1].pause();
+          switch (i) {
+            case 0:
+              movies[movies.length - 1].pause();
+              movies[i + 1].pause();
+
+              handleButtonsAfterSliding(
+                movies[0],
+                playButton[0],
+                pauseButton[0],
+                "mouseenter"
+              );
+
+              break;
+
+            case 1:
+              movies[i - 1].pause();
+              movies[i + 1].pause();
+
+              handleButtonsAfterSliding(
+                movies[1],
+                playButton[1],
+                pauseButton[1],
+                "mouseenter"
+              );
+
+              break;
+
+            case 2:
+              movies[i - 1].pause();
+              movies[0].pause();
+
+              handleButtonsAfterSliding(
+                movies[2],
+                playButton[2],
+                pauseButton[2],
+                "mouseenter"
+              );
+
+              break;
           }
         }
       }
