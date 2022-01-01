@@ -28,6 +28,10 @@
 
 .intro-content {
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .intro-credits {
@@ -80,9 +84,6 @@
     grid-row-start: 2;
     width: 85%;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
   }
 
   .intro-description {
@@ -167,7 +168,7 @@
   
   .intro-cover {
     width: 90%;
-    background-size: 20rem 23rem;
+    background-size: 23rem 23rem;
   }
 
   .intro-title {

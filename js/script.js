@@ -219,6 +219,7 @@ window.onload = () => {
 
   function playTrailer(deviceTypeEvent, beginningEvent, endingEvent) {
     for (let i = 0; i < movies.length; i++) {
+
       // play on click video screen
       movies[i].addEventListener(deviceTypeEvent, () => {
         // if the movies is paused
