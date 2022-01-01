@@ -1,0 +1,71 @@
+.canvas-recommendations-section {
+    padding: 2rem 3rem 4rem;
+    background-color: #fff;
+}
+
+.canvas-recommendations-section-title {
+    margin-bottom: 3rem;
+    background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+    font-weight: 600;
+    font-size: 2.5rem;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.canvas-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.recommendations-canvas {
+    background-color: teal;
+    width: 50%;
+    border: 6px solid black;
+    border-radius: 1.25rem;
+}
+
+@media (max-width: 1135px) {
+    .recommendations-canvas {
+        width: 75%;
+    }
+}
+
+@media (max-width: 768px) {
+    .canvas-recommendations-section-title {
+        font-size: 1.75rem;
+    }
+
+    .recommendations-canvas {
+        width: 85%;
+    }
+}
+
+@media (max-width: 555px) {
+    .canvas-recommendations-section-title {
+        font-size: 1.4rem;
+    }
+
+    .recommendations-canvas {
+        width: 95%;
+        border: 3px solid black;
+    }
+}
+
+@media (max-width: 470px) {
+    .canvas-recommendations-section-title {
+        font-size: 1.2rem;
+        width: 100%;
+        margin: 0 auto 1.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .recommendations-canvas {
+        width: 100%;
+        height: 8rem;
+        border: 2px solid black;
+    }
+}

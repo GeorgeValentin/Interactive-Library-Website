@@ -152,7 +152,7 @@ window.onload = () => {
     readingListContainer.style.display = "none";
   }
 
-  function main() {
+  function trendingSectionMain() {
     animateOverlay(bookImg, bookOverlay);
     makeTheAddButtonStayPressed(buttonAddReadingList);
 
@@ -179,7 +179,381 @@ window.onload = () => {
     });
   }
 
-  main();
+  trendingSectionMain();
+
+  //* Personalized Recommendation Canvas Section
+
+  // Setup the canvas container and context
+  let canvas = document.querySelector(".recommendations-canvas");
+  let canvasContext = canvas.getContext("2d");
+  canvas.width = 455;
+  canvas.height = 210;
+
+  // Create variables
+  let canvasBackground = new Image();
+  let question = new String();
+  let recommendedBook = new String();
+  let recomBookAuthor = new String();
+  let answer1 = new String();
+  let answer2 = new String();
+  let answer3 = new String();
+
+  let questionNumber = 0;
+  let clickY = 0;
+
+  // variables storing the state of the answers
+  // 0 - not picked
+  // 1 - picked by the user
+  let q1AnsPicked1 = 0;
+  let q1AnsPicked2 = 0;
+  let q1AnsPicked3 = 0;
+
+  let q2AnsPicked1 = 0;
+  let q2AnsPicked2 = 0;
+  let q2AnsPicked3 = 0;
+
+  let q3AnsPicked1 = 0;
+  let q3AnsPicked2 = 0;
+  let q3AnsPicked3 = 0;
+
+  const questions = [
+    "What is you favourite genre?",
+    "Which author do you prefer?",
+    "What is the last book read?",
+  ];
+
+  const answers = [
+    // answers to Question 1
+    ["Science Fiction", "Action and Adventure", "Drama"],
+
+    // answers to Question 2
+    ["George R.R. Martin", "Fyodor Dostoevsky", "Marin Preda"],
+
+    // answers to Question 3
+    ["A Dance with Dragons", "The Brothers Karamazov", "Morometii"],
+  ];
+
+  // add the canvas template image to the canvasContext
+  canvasBackground.onload = () => {
+    canvasContext.drawImage(canvasBackground, 0, 0);
+    setQuestions();
+  };
+
+  // we can use this if we don't find anything else
+  // canvasBackground.src = "../resources/images/canvas_background4.PNG";
+
+  canvasBackground.src = "../resources/images/canvas_background.PNG";
+
+  function setQuestions() {
+    // Get the questions and answers from the arrays
+    question = questions[questionNumber];
+    answer1 = answers[questionNumber][0];
+    answer2 = answers[questionNumber][1];
+    answer3 = answers[questionNumber][2];
+
+    canvasContext.fillStyle = "#192a56";
+    // Center the text and specify its font properties
+    canvasContext.textAlign = "center";
+    canvasContext.font = "bold 18pt Arial";
+
+    // Add the text to the canvas
+    canvasContext.fillText(question, canvas.width / 2, 35);
+
+    // Make the answers italic
+    canvasContext.font = "italic 18pt Arial";
+    canvasContext.fillText(answer1, canvas.width / 2, 90);
+    canvasContext.fillText(answer2, canvas.width / 2, 140);
+    canvasContext.fillText(answer3, canvas.width / 2, 195);
+  }
+
+  canvas.addEventListener("click", canvasClick, false);
+
+  function setAnswersBasedOnClickChoice1() {
+    if (questionNumber === 0) {
+      q1AnsPicked1 = 1;
+    }
+
+    if (questionNumber === 1) {
+      q2AnsPicked1 = 1;
+    }
+
+    if (questionNumber === 2) {
+      q3AnsPicked1 = 1;
+    }
+  }
+
+  function setAnswersBasedOnClickChoice2() {
+    if (questionNumber === 0) {
+      q1AnsPicked2 = 1;
+    }
+
+    if (questionNumber === 1) {
+      q2AnsPicked2 = 1;
+    }
+
+    if (questionNumber === 2) {
+      q3AnsPicked2 = 1;
+    }
+  }
+
+  function setAnswersBasedOnClickChoice3() {
+    if (questionNumber === 0) {
+      q1AnsPicked3 = 1;
+    }
+
+    if (questionNumber === 1) {
+      q2AnsPicked3 = 1;
+    }
+
+    if (questionNumber === 2) {
+      q3AnsPicked3 = 1;
+    }
+  }
+
+  function canvasClick(e) {
+    // -> Get the address of the offset in the Y coordinate of the mouse pointer;
+    // -> The X is the entire width of the canva by default
+    clickY = e.offsetY;
+
+    //* Select the first answer based on the question being asked
+    if (clickY >= 90 && clickY <= 170) {
+
+      setAnswersBasedOnClickChoice1()
+
+      resetQuestion();
+    }
+
+    //* Select the second answer based on the question being asked
+    if (clickY >= 182 && clickY <= 263) {
+
+      setAnswersBasedOnClickChoice2()
+
+      resetQuestion();
+    }
+
+    //* Select the third answer based on the question being asked
+    if (clickY >= 274 && clickY <= 352) {
+
+      setAnswersBasedOnClickChoice3()
+
+      resetQuestion();
+    }
+  }
+
+  function resetQuestion() {
+    canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+    questionNumber++;
+
+    if (questionNumber === questions.length) {
+      finishQuiz();
+    } else {
+      // set the new question and the new set of answers
+      canvasContext.drawImage(canvasBackground, 0, 0);
+      setQuestions();
+    }
+  }
+
+  function finishQuiz() {
+    canvas.removeEventListener("click", canvasClick, false);
+    canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+    canvasContext.font = "bold 18pt Cambria";
+    canvasContext.textAlign = "center";
+    recommendBook();
+    canvasContext.fillStyle = "white";
+    canvasContext.fillText(
+      "We recommend you to try: ",
+      canvas.width / 2,
+      canvas.height / 2.75
+    );
+    canvasContext.fillStyle = "white";
+    canvasContext.font = "italic 18pt Cambria";
+    canvasContext.fillText(
+      recommendedBook,
+      canvas.width / 2,
+      canvas.height / 2 + 25
+    );
+    canvasContext.fillText(
+      recomBookAuthor,
+      canvas.width / 2,
+      canvas.height / 2 + 60
+    );
+  }
+
+  function assignBookAndAuthor(canvaBookTitle, canvaBookAuthor) {
+    recommendedBook = canvaBookTitle;
+    recomBookAuthor = canvaBookAuthor;
+  }
+
+  // Recommend books based on the user's answers
+  function handleRecommendation(
+    answer1,
+    answer1Book,
+    answer1Author,
+    answer2,
+    answer2Book,
+    answer2Author,
+    answer3,
+    answer3Book,
+    answer3Author
+  ) {
+    switch (true) {
+      case answer1 === 1:
+        assignBookAndAuthor(answer1Book, answer1Author);
+        break;
+      case answer2 === 1:
+        assignBookAndAuthor(answer2Book, answer2Author);
+        break;
+      case answer3 === 1:
+        assignBookAndAuthor(answer3Book, answer3Author);
+        break;
+    }
+  }
+
+  function recommendBook() {
+    // -> Science Fiction
+    if (q1AnsPicked1 === 1) {
+      // -> George R.R. Martin
+      if (q2AnsPicked1 === 1) {
+        handleRecommendation(
+          q3AnsPicked1,
+          '"Fire and Blood"',
+          "George R.R. Martin",
+          q3AnsPicked2,
+          '"Dune"',
+          "Frank Herbert",
+          q3AnsPicked3,
+          '"Shout in silence"',
+          "Marina Neagu"
+        );
+      }
+
+      // -> Fyodor Dostoyevsky
+      if (q2AnsPicked2 === 1) {
+        handleRecommendation(
+          q3AnsPicked1,
+          '"Aelita"',
+          "by Aleksey Tolstoy",
+          q3AnsPicked2,
+          '"Crime and Punishment"',
+          "by Fyodor Dostoyevsky",
+          q3AnsPicked3,
+          '"The Fall into Time"',
+          "by Emil Cioran"
+        );
+      }
+
+      // -> Marin Preda
+      if (q2AnsPicked3 === 1) {
+        handleRecommendation(
+          q3AnsPicked1,
+          '"The Emperor of Ice"',
+          "by Ana Maria Negrila",
+          q3AnsPicked2,
+          '"History and Utopia"',
+          "by Emil Cioran",
+          q3AnsPicked3,
+          '"Ion"',
+          "by Liviu Rebreanu"
+        );
+      }
+    }
+
+    // -> Action and Adventure
+    if (q1AnsPicked2 === 1) {
+      // -> George R.R. Martin
+      if (q2AnsPicked1 === 1) {
+        handleRecommendation(
+          q3AnsPicked1,
+          '"The Fellowship of the Ring"',
+          "by J.R.R. Tolkein",
+          q3AnsPicked2,
+          '"The Three Musketeers"',
+          "by Alexandre Dumas",
+          q3AnsPicked3,
+          '"The Season of the daggers"',
+          "by Serban Andrei Mazilu"
+        );
+      }
+
+      // -> Fyodor Dostoyevsky
+      if (q2AnsPicked2 === 1) {
+        handleRecommendation(
+          q3AnsPicked1,
+          '"War and Peace"',
+          "by Lev Tolstoy",
+          q3AnsPicked2,
+          '"The Idiot"',
+          "by Fyodor Dostoyevsky",
+          q3AnsPicked3,
+          '"Notes from Underground"',
+          "by Fyodor Dostoyevsky"
+        );
+      }
+
+      // -> Marin Preda
+      if (q2AnsPicked3 === 1) {
+        handleRecommendation(
+          q3AnsPicked1,
+          '"The Delirium"',
+          "by Marin Preda",
+          q3AnsPicked2,
+          '"Life as a prey"',
+          "by Marin Preda",
+          q3AnsPicked3,
+          '"The most beloved of earthlings"',
+          "by Marin Preda"
+        );
+      }
+    }
+
+    // -> Drama
+    if (q1AnsPicked3 === 1) {
+      // -> George R.R. Martin
+      if (q2AnsPicked1 === 1) {
+        handleRecommendation(
+          q3AnsPicked1,
+          '"Phantasm Time"',
+          "by Ovidiu Craznic",
+          q3AnsPicked2,
+          '"Mara"',
+          "by Ioan Slavici",
+          q3AnsPicked3,
+          '"The Hatchet"',
+          "by Mihail Sadoveanu"
+        );
+      }
+
+      // -> Fyodor Dostoyevsky
+      if (q2AnsPicked2 === 1) {
+        handleRecommendation(
+          q3AnsPicked1,
+          '"Alexandru Lapusneanul"',
+          "by Costache Negruzzi",
+          q3AnsPicked2,
+          '"Iona"',
+          "by Marin Sorescu",
+          q3AnsPicked3,
+          '"Childhood Memories"',
+          "by Ion Creanga"
+        );
+      }
+
+      // Marin Preda
+      if (q2AnsPicked3 === 1) {
+        handleRecommendation(
+          q3AnsPicked1,
+          '"Otilia\'s Riddle"',
+          "by George Calinescu",
+          q3AnsPicked2,
+          '"A lost letter"',
+          "by Ion Luca Caragiale",
+          q3AnsPicked3,
+          '"The Lucky Mill"',
+          "by Ioan Slavici"
+        );
+      }
+    }
+  }
 
   //* Movie Carousel Section
   const movieCarousel = document.querySelector("#movies-carousel");
@@ -264,13 +638,12 @@ window.onload = () => {
   }
 
   function hideOneButtonAndShowAnother(showButton, hideButton) {
-    showButton.style.display = "block";
     hideButton.style.display = "none";
+    showButton.style.display = "block";
   }
 
   function playTrailer(deviceTypeEvent, beginningEvent, endingEvent) {
     for (let i = 0; i < movies.length; i++) {
-
       // play on click video screen
       movies[i].addEventListener(deviceTypeEvent, () => {
         // if the movies is paused
@@ -281,6 +654,7 @@ window.onload = () => {
             hideOneButtonAndShowAnother(pauseButton[i], playButton[i]);
           });
         }
+
         // if the movie is playing
         else {
           // show the pause button
@@ -310,6 +684,7 @@ window.onload = () => {
           hideButton(playButton[i]);
           hideButton(pauseButton[i]);
         }
+
         // if the movie is playing pause it and show the playButton
         else {
           movies[i].pause();
@@ -469,7 +844,6 @@ window.onload = () => {
       .bindPopup("Calea Calarasi, București")
       .openPopup();
   }
-  
-  mapSectionMain();
 
+  mapSectionMain();
 };
