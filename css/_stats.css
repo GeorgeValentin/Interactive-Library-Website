@@ -61,7 +61,7 @@
 }
 
 .stats-section-cover {
-  margin: 0 3rem 1rem;
+  margin: 0 3rem 2.5rem;
   box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.15);
   background-color: var(--white);
   transition: all 150ms ease-in-out;
