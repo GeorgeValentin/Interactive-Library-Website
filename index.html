@@ -12,8 +12,11 @@
     <!-- Bootstrap CDN  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
         crossorigin="anonymous"></script>
 
     <!-- CSS Stylesheet -->
@@ -41,34 +44,42 @@
 
     <!-- Add the Leaflet Js Library (Open Source Library for mobile-friendly interactive maps) -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin="" />
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>    
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
 </head>
 
 <body>
+
     <header>
-        <nav>
-            <div class="row">
-                <img src="resources/images/Boy_Reads.png" alt="Logo" class="logo" />
-                <ul class="main-nav">
-                    <li><a href="#">Main menu</a></li>
-                    <li><a href="#">Language preferences</a></li>
-                    <li><a href="#">Sign up</a></li>
-                </ul>
-                <div class="search">
-                    <input type="text" class="searchTerm" placeholder="What are you looking for?">
-                    <button type="submit" class="searchButton">
-                        <i class="fa fa-search"></i>
-                    </button>
+
+        <nav class="navbar sticky-top navbar-expand-lg navbar-primary">
+            <div class="menu-container container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./resources/images/Boy_Reads.png" alt="website-logo" class="menu-website-logo">
+                    <div class="menu-brand-title">
+                        ReaderX
+                    </div>
+                </a>
+                <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="menu-links-container collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="#reading-trending">Reading Trends</a>
+                        <a class="nav-link" href="#movies">Movies</a>
+                        <a class="nav-link" href="#contact-form-section">Contact</a>
+                        <a class="nav-link" href="#location-section">Location</a>
+                    </div>
                 </div>
             </div>
         </nav>
 
-
     </header>
-    <hr>
 
     <section id="intro-section">
 
@@ -77,13 +88,16 @@
                 Lawr & George presents
             </h3>
 
-            <h2 class="intro-title">
-                <span><img class="website-intro-logo" src="./resources/images/website-logo.png"
-                        alt="website-logo"></span>ReaderX
-            </h2>
+            <div class="intro-title"><img class="website-intro-logo" src="./resources/images/Boy_Reads.png"
+                    alt="website-logo">
+                <div class="intro-text">
+                    ReaderX
+                </div>
+            </div>
 
             <p class="intro-description">
-                Read, Watch, Listen, there is more than one way of interacting with books. This webpage was built out of passion for reading and with the purpose of bringing readers closer.
+                Read, Watch, Listen, there is more than one way of interacting with books. This webpage was built out of
+                passion for reading and with the purpose of bringing readers closer.
             </p>
         </section>
 
@@ -218,7 +232,8 @@
                             </section>
 
                             <section class="book-author">
-                                By: <a class="book-author-link" target="_blank" href="https://en.wikipedia.org/wiki/Sally_Rooney">Sally
+                                By: <a class="book-author-link" target="_blank"
+                                    href="https://en.wikipedia.org/wiki/Sally_Rooney">Sally
                                     Rooney</a>
                             </section>
 
@@ -260,7 +275,8 @@
                             </section>
 
                             <section class="book-author">
-                                By: <a class="book-author-link" target="_blank" href="https://en.wikipedia.org/wiki/Casey_McQuiston">Casey
+                                By: <a class="book-author-link" target="_blank"
+                                    href="https://en.wikipedia.org/wiki/Casey_McQuiston">Casey
                                     McQuiston</a>
                             </section>
 
@@ -346,7 +362,8 @@
                             </section>
 
                             <section class="book-author">
-                                By: <a class="book-author-link" target="_blank" href="https://en.wikipedia.org/wiki/Stephen_King">Stephen
+                                By: <a class="book-author-link" target="_blank"
+                                    href="https://en.wikipedia.org/wiki/Stephen_King">Stephen
                                     King</a>
                             </section>
 
@@ -381,7 +398,7 @@
 
     </section>
 
-    <section id="reading-trending" class="canvas-recommendations-section">
+    <section id="recommendations-canva" class="canvas-recommendations-section">
         <h2 class="canvas-recommendations-section-title">Would you like a personalized recommendation?</h2>
 
         <div class="canvas-container">
@@ -444,13 +461,14 @@
 
             <section class="form-field">
                 <label for="book-title" class="form-labels-text">Book Title:</label>
-                <input required type="text" minlength="2" maxlength="25" id="book-title" class="input-book-title form-field-text" name="bookTitle" placeholder="Enter the book title">
+                <input required type="text" minlength="2" maxlength="25" id="book-title"
+                    class="input-book-title form-field-text" name="bookTitle" placeholder="Enter the book title">
             </section>
 
             <section class="form-field">
                 <label for="book-author" class="form-labels-text">Book Author:</label>
-                <input required type="text" minlength="5" maxlength="25" id="book-author" class="input-book-author form-field-text" name="bookAuthor"
-                    placeholder="Enter the book author">
+                <input required type="text" minlength="5" maxlength="25" id="book-author"
+                    class="input-book-author form-field-text" name="bookAuthor" placeholder="Enter the book author">
             </section>
 
             <!-- "Languages" -> display checkboxes on medium-large screens -->
@@ -489,8 +507,8 @@
 
             <section class="number-of-volumes form-field">
                 <label for="volumes-number" class="form-labels-text">Number of volumes:</label>
-                <input required id="volumes-number" class="number-of-volumes-input form-field-text" type="number" placeholder="Amount of Volumes" min="1"
-                    max="5">
+                <input required id="volumes-number" class="number-of-volumes-input form-field-text" type="number"
+                    placeholder="Amount of Volumes" min="1" max="5">
             </section>
 
             <section class="book-genre form-field">
@@ -505,7 +523,8 @@
 
             <section class="form-field">
                 <label for="user-email" class="form-labels-text">Email:</label>
-                <input required type="email" minlength="12" maxlength="35" id="user-email" class="input-user-email form-field-text" name="userEmail" placeholder="Enter your email address">
+                <input required type="email" minlength="12" maxlength="35" id="user-email"
+                    class="input-user-email form-field-text" name="userEmail" placeholder="Enter your email address">
             </section>
 
             <button type="submit" class="btn-send">Make Suggestion!<i class="fas fa-plus-square"></i></button>
@@ -523,31 +542,37 @@
     <section id="reviews" class="users-reviews">
         <div id="reviews-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <h3 class="user-review-text">ReaderX helped me discover my passion for reading that I never expected. Now I read every day!</h3>
-                  <img class="daniela-avatar user-review-image" src="./resources/images/daniela_reader_avatar.png" alt="daniela-profile">
-                  <em class="user-details">Raluca, Bucharest</em>
-              </div>
-              <div class="carousel-item">
-                <h3 class="user-review-text">Because of ReaderX I have found people that have similar taste in reading and made friends!</h3>
-                  <img class="mihai-avatar user-review-image" src="./resources/images/mihai_reader_avatar.png" alt="mihai-profile">
-                  <em class="user-details">Mihai, Ploiesti</em>
-              </div>
-              <div class="carousel-item">
-                <h3 class="user-review-text">Because of ReaderX's reading lists and I can organize myself and acheive my reading objectives!</h3>
-                  <img class="andreea-avatar user-review-image" src="./resources/images/andreea_reader_avatar.png" alt="andreea-profile">
-                  <em class="user-details">Andreea, Pitesti</em>
-              </div>
+                <div class="carousel-item active">
+                    <h3 class="user-review-text">ReaderX helped me discover my passion for reading that I never expected. Now I read every day!</h3>
+                    <img class="daniela-avatar user-review-image" src="./resources/images/daniela_reader_avatar.png"
+                        alt="daniela-profile">
+                    <em class="user-details">Raluca, Bucharest</em>
+                </div>
+                <div class="carousel-item">
+                    <h3 class="user-review-text">Because of ReaderX I have found people that have similar taste in reading and made friends!</h3>
+                    <img class="mihai-avatar user-review-image" src="./resources/images/mihai_reader_avatar.png"
+                        alt="mihai-profile">
+                    <em class="user-details">Mihai, Ploiesti</em>
+                </div>
+                <div class="carousel-item">
+                    <h3 class="user-review-text">Because of ReaderX's reading lists and I can organize myself and
+                        acheive my reading objectives!</h3>
+                    <img class="andreea-avatar user-review-image" src="./resources/images/andreea_reader_avatar.png"
+                        alt="andreea-profile">
+                    <em class="user-details">Andreea, Pitesti</em>
+                </div>
             </div>
-            <button class="carousel-control-prev btn-review-prev" type="button" data-bs-target="#reviews-carousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
+            <button class="carousel-control-prev btn-review-prev" type="button" data-bs-target="#reviews-carousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next btn-review-next" type="button" data-bs-target="#reviews-carousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
+            <button class="carousel-control-next btn-review-next" type="button" data-bs-target="#reviews-carousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
             </button>
-          </div>
+        </div>
     </section>
 
     <section class="media-partners">
@@ -579,16 +604,17 @@
     </section>
 
     <section id="location-section" class="map-section">
-        <h2 class="map-section-title"> Are you a passionate reader? If so, we are looking forward to meet you at one of our location!</h2>
+        <h2 class="map-section-title"> Are you a passionate reader? If so, we are looking forward to meet you at one of
+            our location!</h2>
 
-            <div id="mapLocation"></div>
+        <div id="mapLocation"></div>
     </section>
 
     <footer class="footer">
 
         <div class="container">
             <a class="footer-logo" href="#">
-                <img class="website-footer-logo" src="./resources/images/website-logo.png" alt="website-logo">
+                <img class="website-footer-logo" src="./resources/images/Boy_Reads.png" alt="website-logo">
                 <span class="website-footer-name">ReaderX</span>
             </a>
 
