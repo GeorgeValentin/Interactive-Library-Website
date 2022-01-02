@@ -57,7 +57,7 @@
 
         <nav class="navbar sticky-top navbar-expand-lg navbar-primary">
             <div class="menu-container container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="#intro-section">
                     <img src="./resources/images/Boy_Reads.png" alt="website-logo" class="menu-website-logo">
                     <div class="menu-brand-title">
                         ReaderX
@@ -183,20 +183,9 @@
         </section>
 
     </section>
-
     <div class="stats-section-cover">
         <div class="stats-section-cover-img"></div>
     </div>
-
-    <section id="audio-books-section" class="audio-section">
-        <div class="audio-sample">
-            George asculta manele
-        </div>
-        <a href="#" class="audio_section_button">Play audio</a>
-        <button type="submit" class="audio_section_button">Play</button>
-
-    </section>
-    <hr>
 
     <section id="reading-trending" class="trending-section">
 
@@ -453,6 +442,57 @@
         </div>
     </section>
 
+    <div id="movies-discounts" class="dragNdrop-section">
+
+        <h2 class="dragNdrop-section-title"> Test your knowledge and get a discount for the next movie premiere! </h2>
+
+        <div class="dragndrop_game">
+
+            <div id="options-home-container" class="choice">
+                <p id="harry_potter_answer" class="pickup" draggable="true">JK Rowling</p>
+                <p id="seven_books_answer" class="pickup" draggable="true">Seven Books (7)</p>
+                <p id="poet_answer" class="pickup" draggable="true">M Eminescu</p>
+                <p id="actor_answer" class="pickup" draggable="true">T Chalamet</p>
+                <p id="caragiale_answer" class="pickup" draggable="true">IL Caragiale</p>
+            </div>
+
+            <div id="ans1" class="choice answer-box">
+                The author of Harry Potter is
+                <input placeholder="Answer:" type="text" class="answer1 input-answer">
+                </input>
+            </div>
+            <div id="ans2" class="choice answer-box "> The main actor in the movie "Dune" is
+                <input placeholder="Answer:" type="text" class="answer2 input-answer">
+                </input>
+            </div>
+            <div id="ans3" class="choice answer-box"> Most famous romanian poet
+                <input placeholder="Answer:" type="text" class="answer3 input-answer">
+                </input>
+            </div>
+            <div id="ans4" class="choice answer-box"> How many books are in the series "Harry Potter"?
+                <input placeholder="Answer:" type="text" class="answer4 input-answer">
+                </input>
+            </div>
+            <div id="ans5" class="choice answer-box"> Who wrote "A lost letter"?
+                <input placeholder="Answer:" type="text" class="answer5 input-answer">
+                </input>
+            </div>
+
+        </div>
+
+        <div class="retry-btn-container">
+            <button id="retry-button" type="submit" value="submit">Retry</button>
+        </div>
+
+        <div class="popup">
+            <span class="popup-text" id="myPopup">Congrats! Here is your discount code for 25% for a movie of your
+                choice:
+                <span id="discount_code"></span>
+            </span>
+        </div>
+
+    </div>
+
     <section id="contact-form-section" class="req-books-section">
 
         <h2 class="req-books-section-title">Have any books in mind that you think are worth it?</h2>
@@ -543,13 +583,15 @@
         <div id="reviews-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <h3 class="user-review-text">ReaderX helped me discover my passion for reading that I never expected. Now I read every day!</h3>
+                    <h3 class="user-review-text">ReaderX helped me discover my passion for reading that I never
+                        expected. Now I read every day!</h3>
                     <img class="daniela-avatar user-review-image" src="./resources/images/daniela_reader_avatar.png"
                         alt="daniela-profile">
                     <em class="user-details">Raluca, Bucharest</em>
                 </div>
                 <div class="carousel-item">
-                    <h3 class="user-review-text">Because of ReaderX I have found people that have similar taste in reading and made friends!</h3>
+                    <h3 class="user-review-text">Because of ReaderX I have found people that have similar taste in
+                        reading and made friends!</h3>
                     <img class="mihai-avatar user-review-image" src="./resources/images/mihai_reader_avatar.png"
                         alt="mihai-profile">
                     <em class="user-details">Mihai, Ploiesti</em>
@@ -655,7 +697,7 @@
             <section class="footer-links col1">
                 <a href="#intro-section">About Us</a>
                 <a href="#location-section">Location</a>
-                <a href="#audio-books-section">Audio Books</a>
+                <a href="#movies-discounts">Movie Discounts</a>
             </section>
 
             <section class="footer-links col2">

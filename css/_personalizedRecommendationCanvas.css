@@ -5,10 +5,10 @@
 
 .canvas-recommendations-section-title {
     margin-bottom: 3rem;
-    background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
     font-weight: 600;
     font-size: 2.5rem;
 
+    background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
     background-clip: text;
     -webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;

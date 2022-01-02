@@ -282,7 +282,7 @@ window.onload = () => {
     }
 
     // return an array containing the 3 answers
-    return [answer1, answer2, answer3]
+    return [answer1, answer2, answer3];
   }
 
   function canvasClick(e) {
@@ -292,25 +292,34 @@ window.onload = () => {
 
     //* Select the first answer based on the question being asked
     if (clickY >= 90 && clickY <= 170) {
-
-      // assign the returned values of the function to the variables 
-      [q1AnsPicked1, q2AnsPicked1, q3AnsPicked1] = setAnswersBasedOnClickChoice(q1AnsPicked1, q2AnsPicked1, q3AnsPicked1)
+      // assign the returned values of the function to the variables
+      [q1AnsPicked1, q2AnsPicked1, q3AnsPicked1] = setAnswersBasedOnClickChoice(
+        q1AnsPicked1,
+        q2AnsPicked1,
+        q3AnsPicked1
+      );
 
       resetQuestion();
     }
 
     //* Select the second answer based on the question being asked
     if (clickY >= 182 && clickY <= 263) {
-
-      [q1AnsPicked2, q2AnsPicked2, q3AnsPicked2] = setAnswersBasedOnClickChoice(q1AnsPicked2, q2AnsPicked2, q3AnsPicked2)
+      [q1AnsPicked2, q2AnsPicked2, q3AnsPicked2] = setAnswersBasedOnClickChoice(
+        q1AnsPicked2,
+        q2AnsPicked2,
+        q3AnsPicked2
+      );
 
       resetQuestion();
     }
 
     //* Select the third answer based on the question being asked
     if (clickY >= 274 && clickY <= 352) {
-
-      [q1AnsPicked3, q2AnsPicked3, q3AnsPicked3] = setAnswersBasedOnClickChoice(q1AnsPicked3, q2AnsPicked3, q3AnsPicked3)
+      [q1AnsPicked3, q2AnsPicked3, q3AnsPicked3] = setAnswersBasedOnClickChoice(
+        q1AnsPicked3,
+        q2AnsPicked3,
+        q3AnsPicked3
+      );
 
       resetQuestion();
     }
@@ -677,6 +686,134 @@ window.onload = () => {
   }
 
   moviesCarouselSectionMain();
+
+  //* Drag and Drop Section
+  let options = document.getElementsByClassName("pickup");
+  let choice = document.getElementsByClassName("choice");
+  let homeContainer = document.getElementById("options-home-container");
+  var dragItem = null;
+  let popup = document.getElementById("myPopup");
+  let discountCode = document.getElementById("discount_code");
+  let retryBtn = document.getElementById("retry-button");
+
+  let option1 = document.getElementById("ans1");
+  let option2 = document.getElementById("ans2");
+  let option3 = document.getElementById("ans3");
+  let option4 = document.getElementById("ans4");
+  let option5 = document.getElementById("ans5");
+
+  // "Drag and Drop" mobile replacement
+  let inputsAnswers = document.querySelectorAll(".input-answer")
+  let inputAnswer1 = document.querySelector(".answer1");
+  let inputAnswer2 = document.querySelector(".answer2");
+  let inputAnswer3 = document.querySelector(".answer3");
+  let inputAnswer4 = document.querySelector(".answer4");
+  let inputAnswer5 = document.querySelector(".answer5");
+
+  const rand = () => {
+    return Math.random().toString(36).substr(2);
+  };
+
+  const generateDiscountCode = () => {
+    return rand() + rand();
+  };
+
+  for (let i of options) {
+    i.addEventListener("dragstart", dragStart);
+    i.addEventListener("dragend", dragEnd);
+  }
+
+  function dragStart() {
+    dragItem = this;
+    setTimeout(() => (this.style.display = "none"), 0);
+  }
+
+  function dragEnd() {
+    setTimeout(() => (this.style.display = "block"), 0);
+    dragItem = null;
+  }
+
+  for (let j of choice) {
+    j.addEventListener("dragover", dragOver);
+    j.addEventListener("dragenter", dragEnter);
+    j.addEventListener("dragleave", dragLeave);
+    j.addEventListener("drop", drop);
+  }
+
+  function drop() {
+    this.style.border = "3px solid black";
+    this.append(dragItem);
+    checkForFinalResult();
+  }
+
+  function dragOver(e) {
+    e.preventDefault();
+    this.style.border = "3px dotted cyan";
+  }
+
+  function dragEnter(e) {
+    e.preventDefault();
+  }
+
+  function dragLeave() {
+    this.style.border = "3px solid black";
+  }
+
+  function emptyInputs(inputBox) {
+    inputBox.value = ""
+  }
+
+  function retryButtonClick() {
+    emptyInputs(inputAnswer1)
+    emptyInputs(inputAnswer2) 
+    emptyInputs(inputAnswer3) 
+    emptyInputs(inputAnswer4) 
+    emptyInputs(inputAnswer5) 
+
+    for (let o of options) {
+      homeContainer.append(o);
+    }
+    popup.classList.remove("displayPopUp");
+  }
+
+  retryBtn.addEventListener("click", retryButtonClick);
+
+  function checkFinalMobile() {
+    if(
+      (inputAnswer1.value === document.getElementById("harry_potter_answer").textContent) &&
+      inputAnswer2.value === document.getElementById("actor_answer").textContent &&
+      inputAnswer3.value === document.getElementById("poet_answer").textContent &&
+      (inputAnswer4.value === document.getElementById("seven_books_answer").textContent || inputAnswer4.value === "7") &&
+      inputAnswer5.value === document.getElementById("caragiale_answer").textContent
+    ) {
+      playSoundAndShowDiscount();
+    } 
+  }
+
+  for(let i = 0; i < inputsAnswers.length; i++) {
+    inputsAnswers[i].addEventListener("focusout", () => {
+      checkFinalMobile()
+    })
+  }
+
+  function checkForFinalResult() {
+    if (
+          option1.contains(document.getElementById("harry_potter_answer")) &&
+          option2.contains(document.getElementById("actor_answer")) &&
+          option3.contains(document.getElementById("poet_answer")) &&
+          option4.contains(document.getElementById("seven_books_answer")) &&
+          option5.contains(document.getElementById("caragiale_answer"))
+        ) {
+      playSoundAndShowDiscount();
+    } 
+  }
+
+  function playSoundAndShowDiscount() {
+    discountCode.textContent = generateDiscountCode();
+    popup.classList.toggle("displayPopUp");
+    let winSound = createSoundObjects("tada");
+    winSound.play();
+  }
 
   //* Request Books Section
   const inputBookAuthor = document.querySelector(".input-book-author");

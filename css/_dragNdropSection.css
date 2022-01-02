@@ -1,0 +1,228 @@
+.dragNdrop-section {
+    padding: 3rem;
+}
+
+.dragNdrop-section-title {
+    font-size: 2.25rem;
+    width: 75%;
+    margin: 0 auto;
+    font-weight: 600;
+
+    background: linear-gradient(to right, #7ed6df 0%, #30336b 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.dragndrop_game { 
+    width: 100%;
+    margin: 3.5rem auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+    gap: 1rem;
+}
+
+div[class="dragndrop_game"] > div { 
+    width: 14rem;
+    height: 18.5rem;
+    padding: 0.5rem;
+    background:#c7ecee;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 1.5rem;
+}
+
+.input-answer {
+    display: none;
+}
+
+.answer-box { 
+    font-size: 1.25rem;
+    font-weight: 500;
+    font-style: inherit;
+}
+
+div[class="dragndrop_game"] p { 
+    background:lightseagreen;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    margin: 10px auto;
+}
+
+.retry-text {
+    font-size: 1.75rem;
+    font-weight: 450;
+    width: 60%;
+    margin: 0 auto;
+}
+
+/* Popup container */
+.popup {
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    width: 75%;
+    margin: auto;
+    padding: 1.25rem 1.25rem 0rem;
+}
+  
+.popup .popup-text {
+    display: none;
+    height: inherit;
+    width: 80%;
+    color: white;
+    text-align: center;
+    top: 30%;
+    background-color: lightseagreen;
+    font-size: 2rem;
+    padding: 0.2rem;
+    margin: 0 auto;
+}
+    
+#discount_code {
+    font-weight: 550;
+}
+
+.popup .displayPopUp {
+    display: block;
+    margin: 0 auto;
+}
+
+.retry-btn-container {
+    margin: 1rem 0;
+}
+
+#retry-button{
+    background-color:black;
+    border: 1px solid whitesmoke;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 1rem;
+    font-weight: 550;
+	padding: 0.5rem 1rem;
+	text-decoration: none;
+	text-transform: uppercase;
+    width: 10rem;
+}
+
+@media(max-width: 1480px) {
+    .dragndrop_game {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 1rem;
+        column-gap: 0;
+    }
+
+    div[class="dragndrop_game"] > div { 
+        width: 90%;
+    }
+
+    .popup .popup-text {
+        font-size: 1.5rem;
+    }
+}
+
+@media(max-width: 1100px) {
+    .dragNdrop-section-title {
+        font-size: 2rem;
+    }
+
+    .input-answer {
+        display: block;
+        width: 100%;
+        margin-top: 1.5rem;
+    }
+}
+
+@media(max-width: 970px) {
+    .dragNdrop-section-title {
+        font-size: 1.75rem;
+        width: 95%;
+    }
+
+    div[class="dragndrop_game"] > div {
+        width: 90%;
+    }
+
+    .popup .popup-text {
+        width: 100%;
+        font-size: 1.25rem;
+    }
+}
+
+@media(max-width: 800px) {
+    .dragndrop_game {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 0rem;
+    }
+
+    div[class="dragndrop_game"] > div {
+        width: 90%;
+    }
+}
+
+@media(max-width: 625px) {
+    div[class="dragndrop_game"] > div {
+        width: 95%;
+    }
+
+    .popup {
+        width: 100%;
+    }
+
+    .popup .popup-text {
+        font-size: 1rem;
+    }
+}
+
+@media(max-width: 550px) {
+    .dragndrop_game {
+        grid-template-columns: 1fr;
+    }
+
+    div[class="dragndrop_game"] > div {
+        width: 95%;
+    }
+
+    div[class="dragndrop_game"] > div:not(:first-child) {
+        height: 11rem;
+    }
+}
+
+@media(max-width: 550px) {
+    .dragNdrop-section-title {
+        font-size: 1.5rem;
+        width: 100%;
+    }
+}
+
+@media(max-width: 440px) {
+    .dragNdrop-section-title {
+        font-size: 1.25rem;
+        width: 95%;
+    }
+}
+
+@media(max-width: 400px) {
+    .dragNdrop-section-title {
+        font-size: 1.15rem;
+        width: 95%;
+    }
+}
+
+@media(max-width: 375px) {
+    .popup {
+        padding: 1.25rem 0 0;
+    }
+}
+
+@media(max-width: 330px) {
+    .dragNdrop-section-title {
+        font-size: 1rem;
+
+    }
+}
