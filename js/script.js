@@ -268,46 +268,21 @@ window.onload = () => {
 
   canvas.addEventListener("click", canvasClick, false);
 
-  function setAnswersBasedOnClickChoice1() {
+  function setAnswersBasedOnClickChoice(answer1, answer2, answer3) {
     if (questionNumber === 0) {
-      q1AnsPicked1 = 1;
+      answer1 = 1;
     }
 
     if (questionNumber === 1) {
-      q2AnsPicked1 = 1;
+      answer2 = 1;
     }
 
     if (questionNumber === 2) {
-      q3AnsPicked1 = 1;
-    }
-  }
-
-  function setAnswersBasedOnClickChoice2() {
-    if (questionNumber === 0) {
-      q1AnsPicked2 = 1;
+      answer3 = 1;
     }
 
-    if (questionNumber === 1) {
-      q2AnsPicked2 = 1;
-    }
-
-    if (questionNumber === 2) {
-      q3AnsPicked2 = 1;
-    }
-  }
-
-  function setAnswersBasedOnClickChoice3() {
-    if (questionNumber === 0) {
-      q1AnsPicked3 = 1;
-    }
-
-    if (questionNumber === 1) {
-      q2AnsPicked3 = 1;
-    }
-
-    if (questionNumber === 2) {
-      q3AnsPicked3 = 1;
-    }
+    // return an array containing the 3 answers
+    return [answer1, answer2, answer3]
   }
 
   function canvasClick(e) {
@@ -318,7 +293,8 @@ window.onload = () => {
     //* Select the first answer based on the question being asked
     if (clickY >= 90 && clickY <= 170) {
 
-      setAnswersBasedOnClickChoice1()
+      // assign the returned values of the function to the variables 
+      [q1AnsPicked1, q2AnsPicked1, q3AnsPicked1] = setAnswersBasedOnClickChoice(q1AnsPicked1, q2AnsPicked1, q3AnsPicked1)
 
       resetQuestion();
     }
@@ -326,7 +302,7 @@ window.onload = () => {
     //* Select the second answer based on the question being asked
     if (clickY >= 182 && clickY <= 263) {
 
-      setAnswersBasedOnClickChoice2()
+      [q1AnsPicked2, q2AnsPicked2, q3AnsPicked2] = setAnswersBasedOnClickChoice(q1AnsPicked2, q2AnsPicked2, q3AnsPicked2)
 
       resetQuestion();
     }
@@ -334,7 +310,7 @@ window.onload = () => {
     //* Select the third answer based on the question being asked
     if (clickY >= 274 && clickY <= 352) {
 
-      setAnswersBasedOnClickChoice3()
+      [q1AnsPicked3, q2AnsPicked3, q3AnsPicked3] = setAnswersBasedOnClickChoice(q1AnsPicked3, q2AnsPicked3, q3AnsPicked3)
 
       resetQuestion();
     }
