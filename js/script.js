@@ -1,6 +1,7 @@
 window.onload = () => {
-  //* Trending Section
-  // -> Select the DOM elements
+  //* -> Select the DOM elements
+
+  // Trending Section
   let bookImg = document.querySelectorAll(".book-image");
   let bookOverlay = document.querySelectorAll(".book-overlay");
   let buttonAddReadingList = document.querySelectorAll(
@@ -26,6 +27,103 @@ window.onload = () => {
 
   let bookAuthorLink = document.querySelectorAll(".book-author-link");
 
+  // Canvas Section
+  // Setup the canvas container and context
+  let canvas = document.querySelector(".recommendations-canvas");
+  let canvasContext = canvas.getContext("2d");
+  canvas.width = 455;
+  canvas.height = 210;
+
+  // Create variables
+  let canvasBackground = new Image();
+  let question = new String();
+  let recommendedBook = new String();
+  let recomBookAuthor = new String();
+  let answer1 = new String();
+  let answer2 = new String();
+  let answer3 = new String();
+
+  let questionNumber = 0;
+  let clickY = 0;
+
+  // variables storing the state of the answers
+  // 0 - not picked
+  // 1 - picked by the user
+  let q1AnsPicked1 = 0;
+  let q1AnsPicked2 = 0;
+  let q1AnsPicked3 = 0;
+
+  let q2AnsPicked1 = 0;
+  let q2AnsPicked2 = 0;
+  let q2AnsPicked3 = 0;
+
+  let q3AnsPicked1 = 0;
+  let q3AnsPicked2 = 0;
+  let q3AnsPicked3 = 0;
+
+  const questions = [
+    "What is you favourite genre?",
+    "Which author do you prefer?",
+    "What is the last book read?",
+  ];
+
+  const answers = [
+    // answers to Question 1
+    ["Science Fiction", "Action and Adventure", "Drama"],
+
+    // answers to Question 2
+    ["George R.R. Martin", "Fyodor Dostoevsky", "Marin Preda"],
+
+    // answers to Question 3
+    ["A Dance with Dragons", "The Brothers Karamazov", "Morometii"],
+  ];
+
+  // Movie Carousel Section
+  const movieCarousel = document.querySelector("#movies-carousel");
+  const movies = document.querySelectorAll(".movie-trailer");
+  const carouselItems = document.querySelectorAll(".carousel-item");
+  const playButton = document.querySelectorAll(".play-button");
+  const pauseButton = document.querySelectorAll(".pause-button");
+
+  // Drag and Drop Section
+  let options = document.getElementsByClassName("pickup");
+  let choice = document.getElementsByClassName("choice");
+  let homeContainer = document.getElementById("options-home-container");
+  var dragItem = null;
+  let popup = document.getElementById("myPopup");
+  let discountCode = document.getElementById("discount_code");
+  let retryBtn = document.getElementById("retry-button");
+
+  let option1 = document.getElementById("ans1");
+  let option2 = document.getElementById("ans2");
+  let option3 = document.getElementById("ans3");
+  let option4 = document.getElementById("ans4");
+  let option5 = document.getElementById("ans5");
+
+  // "Drag and Drop" mobile replacement
+  let inputsAnswers = document.querySelectorAll(".input-answer");
+  let inputAnswer1 = document.querySelector(".answer1");
+  let inputAnswer2 = document.querySelector(".answer2");
+  let inputAnswer3 = document.querySelector(".answer3");
+  let inputAnswer4 = document.querySelector(".answer4");
+  let inputAnswer5 = document.querySelector(".answer5");
+
+  // Request Books Section
+  const inputBookAuthor = document.querySelector(".input-book-author");
+  const inputBookTitle = document.querySelector(".input-book-title");
+  const inputUserEmail = document.querySelector(".input-user-email");
+  let popupText = document.querySelector(".popup-mail-sent-text");
+  const checkBoxes = document.querySelectorAll(".checkbox-input");
+  const inputNumberOfVolumes = document.querySelector(
+    ".number-of-volumes-input"
+  );
+  const btnSend = document.querySelector(".btn-send");
+
+  // Media Partners Section
+  const partners = document.querySelectorAll(".partner");
+
+  //* Functions
+  //* Trending Section
   // -> Animate Overlay
   // Animate the book information (add the overlay on top of the books)
   function animateOverlay(backgroundImage, overlay) {
@@ -182,57 +280,6 @@ window.onload = () => {
   trendingSectionMain();
 
   //* Personalized Recommendation Canvas Section
-
-  // Setup the canvas container and context
-  let canvas = document.querySelector(".recommendations-canvas");
-  let canvasContext = canvas.getContext("2d");
-  canvas.width = 455;
-  canvas.height = 210;
-
-  // Create variables
-  let canvasBackground = new Image();
-  let question = new String();
-  let recommendedBook = new String();
-  let recomBookAuthor = new String();
-  let answer1 = new String();
-  let answer2 = new String();
-  let answer3 = new String();
-
-  let questionNumber = 0;
-  let clickY = 0;
-
-  // variables storing the state of the answers
-  // 0 - not picked
-  // 1 - picked by the user
-  let q1AnsPicked1 = 0;
-  let q1AnsPicked2 = 0;
-  let q1AnsPicked3 = 0;
-
-  let q2AnsPicked1 = 0;
-  let q2AnsPicked2 = 0;
-  let q2AnsPicked3 = 0;
-
-  let q3AnsPicked1 = 0;
-  let q3AnsPicked2 = 0;
-  let q3AnsPicked3 = 0;
-
-  const questions = [
-    "What is you favourite genre?",
-    "Which author do you prefer?",
-    "What is the last book read?",
-  ];
-
-  const answers = [
-    // answers to Question 1
-    ["Science Fiction", "Action and Adventure", "Drama"],
-
-    // answers to Question 2
-    ["George R.R. Martin", "Fyodor Dostoevsky", "Marin Preda"],
-
-    // answers to Question 3
-    ["A Dance with Dragons", "The Brothers Karamazov", "Morometii"],
-  ];
-
   // add the canvas template image to the canvasContext
   canvasBackground.onload = () => {
     canvasContext.drawImage(canvasBackground, 0, 0);
@@ -541,12 +588,6 @@ window.onload = () => {
   }
 
   //* Movie Carousel Section
-  const movieCarousel = document.querySelector("#movies-carousel");
-  const movies = document.querySelectorAll(".movie-trailer");
-  const carouselItems = document.querySelectorAll(".carousel-item");
-  const playButton = document.querySelectorAll(".play-button");
-  const pauseButton = document.querySelectorAll(".pause-button");
-
   function handleButtonsAfterSliding(
     movie,
     playBtn,
@@ -688,28 +729,6 @@ window.onload = () => {
   moviesCarouselSectionMain();
 
   //* Drag and Drop Section
-  let options = document.getElementsByClassName("pickup");
-  let choice = document.getElementsByClassName("choice");
-  let homeContainer = document.getElementById("options-home-container");
-  var dragItem = null;
-  let popup = document.getElementById("myPopup");
-  let discountCode = document.getElementById("discount_code");
-  let retryBtn = document.getElementById("retry-button");
-
-  let option1 = document.getElementById("ans1");
-  let option2 = document.getElementById("ans2");
-  let option3 = document.getElementById("ans3");
-  let option4 = document.getElementById("ans4");
-  let option5 = document.getElementById("ans5");
-
-  // "Drag and Drop" mobile replacement
-  let inputsAnswers = document.querySelectorAll(".input-answer")
-  let inputAnswer1 = document.querySelector(".answer1");
-  let inputAnswer2 = document.querySelector(".answer2");
-  let inputAnswer3 = document.querySelector(".answer3");
-  let inputAnswer4 = document.querySelector(".answer4");
-  let inputAnswer5 = document.querySelector(".answer5");
-
   const rand = () => {
     return Math.random().toString(36).substr(2);
   };
@@ -760,15 +779,15 @@ window.onload = () => {
   }
 
   function emptyInputs(inputBox) {
-    inputBox.value = ""
+    inputBox.value = "";
   }
 
   function retryButtonClick() {
-    emptyInputs(inputAnswer1)
-    emptyInputs(inputAnswer2) 
-    emptyInputs(inputAnswer3) 
-    emptyInputs(inputAnswer4) 
-    emptyInputs(inputAnswer5) 
+    emptyInputs(inputAnswer1);
+    emptyInputs(inputAnswer2);
+    emptyInputs(inputAnswer3);
+    emptyInputs(inputAnswer4);
+    emptyInputs(inputAnswer5);
 
     for (let o of options) {
       homeContainer.append(o);
@@ -779,33 +798,41 @@ window.onload = () => {
   retryBtn.addEventListener("click", retryButtonClick);
 
   function checkFinalMobile() {
-    if(
-      (inputAnswer1.value === document.getElementById("harry_potter_answer").textContent|| inputAnswer1.value==="Lawrence"|| inputAnswer1.value==="George") &&
-      inputAnswer2.value === document.getElementById("actor_answer").textContent &&
-      inputAnswer3.value === document.getElementById("poet_answer").textContent &&
-      (inputAnswer4.value === document.getElementById("seven_books_answer").textContent || inputAnswer4.value === "7") &&
-      inputAnswer5.value === document.getElementById("caragiale_answer").textContent
+    if (
+      (inputAnswer1.value ===
+        document.getElementById("harry_potter_answer").textContent ||
+        inputAnswer1.value === "Lawrence" ||
+        inputAnswer1.value === "George") &&
+      inputAnswer2.value ===
+        document.getElementById("actor_answer").textContent &&
+      inputAnswer3.value ===
+        document.getElementById("poet_answer").textContent &&
+      (inputAnswer4.value ===
+        document.getElementById("seven_books_answer").textContent ||
+        inputAnswer4.value === "7") &&
+      inputAnswer5.value ===
+        document.getElementById("caragiale_answer").textContent
     ) {
       playSoundAndShowDiscount();
-    } 
+    }
   }
 
-  for(let i = 0; i < inputsAnswers.length; i++) {
+  for (let i = 0; i < inputsAnswers.length; i++) {
     inputsAnswers[i].addEventListener("focusout", () => {
-      checkFinalMobile()
-    })
+      checkFinalMobile();
+    });
   }
 
   function checkForFinalResult() {
     if (
-          option1.contains(document.getElementById("harry_potter_answer")) &&
-          option2.contains(document.getElementById("actor_answer")) &&
-          option3.contains(document.getElementById("poet_answer")) &&
-          option4.contains(document.getElementById("seven_books_answer")) &&
-          option5.contains(document.getElementById("caragiale_answer"))
-        ) {
+      option1.contains(document.getElementById("harry_potter_answer")) &&
+      option2.contains(document.getElementById("actor_answer")) &&
+      option3.contains(document.getElementById("poet_answer")) &&
+      option4.contains(document.getElementById("seven_books_answer")) &&
+      option5.contains(document.getElementById("caragiale_answer"))
+    ) {
       playSoundAndShowDiscount();
-    } 
+    }
   }
 
   function playSoundAndShowDiscount() {
@@ -816,16 +843,6 @@ window.onload = () => {
   }
 
   //* Request Books Section
-  const inputBookAuthor = document.querySelector(".input-book-author");
-  const inputBookTitle = document.querySelector(".input-book-title");
-  const inputUserEmail = document.querySelector(".input-user-email");
-  let popupText = document.querySelector(".popup-mail-sent-text");
-  const checkBoxes = document.querySelectorAll(".checkbox-input");
-  const inputNumberOfVolumes = document.querySelector(
-    ".number-of-volumes-input"
-  );
-  const btnSend = document.querySelector(".btn-send");
-
   function preventDigitsInput(element, inputEvent) {
     element.addEventListener(inputEvent, (e) => {
       let char = String.fromCharCode(e.which);
@@ -877,8 +894,6 @@ window.onload = () => {
   requestBooksSectionMain();
 
   //* Media Partners Section
-  const partners = document.querySelectorAll(".partner");
-
   function createSoundObjects(mp3File) {
     let soundObject = new Audio("../resources/sounds/" + mp3File + ".mp3");
     return soundObject;
