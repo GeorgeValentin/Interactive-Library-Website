@@ -380,9 +380,10 @@ input:not([type="checkbox"]) {
   }
 }
 
+
 @media(max-width: 360px) { 
   .req-books-section-title {
-    font-size: 1.3rem;
+    font-size: 1.3rem; 
     width: 80%;
   }
 

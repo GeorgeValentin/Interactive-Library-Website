@@ -780,7 +780,7 @@ window.onload = () => {
 
   function checkFinalMobile() {
     if(
-      (inputAnswer1.value === document.getElementById("harry_potter_answer").textContent) &&
+      (inputAnswer1.value === document.getElementById("harry_potter_answer").textContent|| inputAnswer1.value==="Lawrence"|| inputAnswer1.value==="George") &&
       inputAnswer2.value === document.getElementById("actor_answer").textContent &&
       inputAnswer3.value === document.getElementById("poet_answer").textContent &&
       (inputAnswer4.value === document.getElementById("seven_books_answer").textContent || inputAnswer4.value === "7") &&
