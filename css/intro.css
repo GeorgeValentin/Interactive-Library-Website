@@ -17,7 +17,7 @@
 }
 
 .intro-cover {
-  background-image: url("/resources/images/Intro_Section_Cover.jpg");
+  background-image: url("../resources/images/Intro_Section_Cover.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

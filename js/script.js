@@ -36,6 +36,7 @@ window.onload = () => {
 
   // Create variables
   let canvasBackground = new Image();
+  canvasBackground.src = "/../resources/images/canvas_background.PNG";
   let question = new String();
   let recommendedBook = new String();
   let recomBookAuthor = new String();
@@ -289,7 +290,7 @@ window.onload = () => {
   // we can use this if we don't find anything else
   // canvasBackground.src = "../resources/images/canvas_background4.PNG";
 
-  canvasBackground.src = "../resources/images/canvas_background.PNG";
+
 
   function setQuestions() {
     // Get the questions and answers from the arrays
