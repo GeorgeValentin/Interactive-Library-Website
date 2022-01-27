@@ -36,7 +36,7 @@ window.onload = () => {
 
   // Create variables
   let canvasBackground = new Image();
-  canvasBackground.src = "/../resources/images/canvas_background.PNG";
+  canvasBackground.src = "./resources/images/canvas_background.PNG";
   let question = new String();
   let recommendedBook = new String();
   let recomBookAuthor = new String();
