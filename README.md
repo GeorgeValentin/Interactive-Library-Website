@@ -2,18 +2,24 @@
 
 ## Interactive Library Website
 
+
 ### Built with:
 #### - HTML
 #### - CSS
 #### - Bootstrap
 #### - JavaScript
 
-### Screenshots
 
-#### Desktop
-![](./screenshots/desktop_screenshot.png)
+## Screenshots
 
-#### Mobile Phone
+### Desktop
+<p align="center">
+    <img
+        src=![](./screenshots/desktop_screenshot.png)
+    >
+</p>
+
+### Mobile Phone
 ![](./screenshots/mobile_screenshot.png)
 
 
