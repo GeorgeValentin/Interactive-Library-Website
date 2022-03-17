@@ -15,11 +15,16 @@
 ### Desktop
 <p align="center">
     <img
-        src=![](./screenshots/desktop_screenshot.png)
+        src="./screenshots/desktop_screenshot.png"
+        alt="Website Desktop Screenshot"
     >
 </p>
 
 ### Mobile Phone
-![](./screenshots/mobile_screenshot.png)
-
+<p align="center">
+    <img
+        src="./screenshots/mobile_screenshot.png"
+        alt="Mobile Desktop Screenshot"
+    >
+</p>
 
