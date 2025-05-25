@@ -290,8 +290,6 @@ window.onload = () => {
   // we can use this if we don't find anything else
   // canvasBackground.src = "../resources/images/canvas_background4.PNG";
 
-
-
   function setQuestions() {
     // Get the questions and answers from the arrays
     question = questions[questionNumber];
