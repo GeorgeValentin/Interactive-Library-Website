@@ -20,7 +20,7 @@
 
 <p align="center">
     <img
-        src="./screenshots/desktop_screenshot.jpeg"
+        src="./screenshots/desktop_screenshot.png"
         alt="Website Desktop Screenshot"
     >
 </p>
@@ -29,7 +29,7 @@
 
 <p align="center">
     <img
-        src="./screenshots/mobile_screenshot.jpeg"
+        src="./screenshots/mobile_screenshot.png"
         alt="Mobile Desktop Screenshot"
     >
 </p>
